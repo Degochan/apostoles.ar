@@ -130,7 +130,29 @@ Verificar siempre en https://apostoles.ar (y con hard-refresh, Cmd+Shift+R, por 
 - Las imágenes de tarjeta usan `loading="lazy"`, por lo que el peso individual no es crítico, pero mantener < 200 KB ayuda a la carga inicial del tablero.
 - `index.html` y `tablero.html` tienen mucho CSS duplicado/embebido; es intencional (simplicidad), pero cualquier cambio de diseño global se hace en `assets/style.css` y los puntuales en cada página.
 
-## 8. Respaldos
+## 8. Tablero v2 — administración desde La Fragata
+
+Desde 2026 el tablero se administra **sin editar archivos ni usar git**: todo se hace desde el panel de administración de La Fragata.
+
+**Flujo:**
+
+1. Entrar a `https://lafragata.net/admin/` → sección **🧉 Apóstoles** (solo administradores completos).
+2. Alta/edición de tarjetas en **Tarjetas** (con imagen: se convierte sola a WebP ≤1200px; multi-contacto WhatsApp), más pausar/destacar/ordenar/baja lógica.
+3. Botón **Publicar**: el sistema genera el tablero (HTML server-side para SEO) y lo sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
+4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`) desde el admin.
+
+Durante las pruebas el sistema publica en `tablero2.html` de un repo de prueba; al pasar a producción publica directamente `tablero.html` en este repo (configurando `GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata).
+
+**Archivos de este repo que pasa a generar el sistema** (no editarlos más a mano una vez en producción):
+
+- `assets/tarjetas/` — imágenes de tarjetas nuevas (WebP ≤1200px).
+- `datos/tarjetas.json` — datos de todas las tarjetas activas.
+- `tablero2.html` / `tablero.html` — el tablero completo.
+- `sitemap.xml` — con `lastmod` actualizado en cada publicación.
+
+Los archivos que **siguen siendo manuales**: `index.html`, `assets/style.css`, `assets/app.js`, `robots.txt`, `llms.txt`, `CNAME`, `.nojekyll`. El manual completo del admin está en `docs/MANUAL_APOSTOLES_ADMIN.md` del proyecto lafragata.net.
+
+## 9. Respaldos
 
 El repositorio git **es** el respaldo. Recomendaciones:
 
