@@ -61,7 +61,7 @@ Tabla `apostoles_tarjetas`:
 1. Lee todas las tarjetas activas ordenadas (destacados primero, luego `orden`, luego nombre).
 2. Genera `datos/tarjetas.json` (fuente de datos/versionado, incluye `updated_at`).
 3. Genera `tablero2.html` renderizando cada tarjeta con una plantilla PHP (evolución del markup actual: `tarjeta-card`, `data-category`, `data-keywords`, lightbox, botones WhatsApp). El HTML generado es autocontenido: todo el contenido visible está en el documento sin necesidad de JS.
-4. Publica vía GitHub Contents API (`PUT /repos/{repo}/contents/{path}`), un archivo por vez: JSON, imágenes nuevas/Modificadas, y `tablero2.html` al final. Actualiza también `sitemap.xml` (lastmod) y mantiene `llms.txt` manual.
+4. Publica vía GitHub Contents API (`PUT /repos/{repo}/contents/{path}`), un archivo por vez: JSON, imágenes nuevas/modificadas, y `tablero2.html` al final. Actualiza también `sitemap.xml` (lastmod) y mantiene `llms.txt` manual.
 5. Respuesta al admin: listado de archivos publicados + link a apostoles.ar/tablero2.html. Errores de API se muestran en el admin y no dejan el repo a medias (se publica el JSON/HTML en el mismo orden: primero imágenes y datos, el HTML siempre último).
 
 Fallback manual: botón "Descargar ZIP" con los archivos generados por si el token falla.
