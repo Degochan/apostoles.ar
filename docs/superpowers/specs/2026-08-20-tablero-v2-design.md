@@ -1,7 +1,7 @@
 # Design: Tablero v2 con Admin ABM en La Fragata y publicación a GitHub Pages
 
 Fecha: 2026-08-20
-Repos afectados: `Degochan/apostoles.ar` (este repo) y `Lafragata2` (módulo admin)
+Repos afectados: `Degochan/apostoles.ar` (este repo) y `lafragata.net` (módulo admin, en `/public/admin` de producción)
 
 ## 1. Objetivo
 
@@ -47,14 +47,27 @@ Tabla `apostoles_tarjetas`:
 | activo | TINYINT(1) | baja lógica: no se publica |
 | created_at / updated_at | DATETIME | |
 
-## 5. Módulo admin (repo Lafragata2)
+## 5. Módulo admin (repo lafragata.net, `/public/admin`)
 
-- `public/admin/apostoles.php` — listado con filtros, acciones editar/activar/destacar/borrar (baja lógica), botón "Publicar".
-- `public/admin/apostoles-editor.php` — formulario alta/edición con upload de imagen (reutiliza el flujo de `upload-post-image.php`: valida tipo, redimensiona y convierte a WebP si es posible).
-- `public/api/apostoles.php` — CRUD JSON (mismas convenciones de las APIs existentes, protegido por sesión de admin).
-- `public/api/apostoles-publish.php` — genera los artefactos y llama a GitHub API (ver §6). Protegido por sesión + confirmación.
-- Migración: `public/db/migration_add_apostoles_tarjetas.sql` + importador inicial que parsea las 18 tarjetas actuales de `tablero.html` para partir con los datos existentes.
+El módulo replica el patrón de la sección Finanzas: un solo botón principal en el header del panel, con sub-navegación interna propia.
+
+Integración con el panel:
+
+- Botón **`🧉 Apóstoles`** en el grupo "Gestión" del header (`header.php`), dentro del bloque `<?php if ($admin_can_see_all): ?>` — visible y accesible solo para admins con permiso completo de La Fragata.
+- `apostoles_nav.php` — sub-navegación sticky idéntica en estilo a `fin_nav.php`, incluida por todas las páginas `apostoles-*`: pestañas **Tarjetas** · **Publicar** · **Configuración**.
+
+Páginas:
+
+- `apostoles.php` — hub/dashboard: totales (activas, destacadas, CVs), última publicación y acceso rápido a publicar.
+- `apostoles-cards.php` — listado ABM con filtros por categoría/estado, acciones editar/activar/destacar/borrar (baja lógica).
+- `apostoles-card-editor.php` — formulario alta/edición con upload de imagen (reutiliza el flujo de uploads existente: valida MIME real, límite 2 MB, redimensiona y convierte a WebP cuando es posible).
+- `apostoles-publish.php` — genera los artefactos y publica vía GitHub API (ver §6); muestra resultado, errores y descarga ZIP de respaldo.
+- `apostoles-settings.php` — configuración de la sección (repo destino, verificación del token, categorías disponibles).
+- API: `public/api/apostoles.php` (CRUD) y `public/api/apostoles-publish.php` (publicación), mismas convenciones de las APIs existentes, protegidas por sesión de admin + CSRF.
+- Migración: `migration_add_apostoles_tarjetas.sql` + importador inicial que parsea las 18 tarjetas actuales de `tablero.html`.
 - Config: `GITHUB_TOKEN_APOSTOLES` y `GITHUB_REPO_APOSTOLES` como variables de entorno del hosting (nunca en el código).
+
+Todas las páginas `apostoles-*` verifican sesión + `$admin_can_see_all` además del login, para que ningún admin de alcance limitado acceda aunque conozca la URL.
 
 ## 6. Generador y publicador (PHP, server-side)
 
