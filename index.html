@@ -3,22 +3,980 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apóstoles</title>
+  <title>ITe Apóstoles — Cartelera Comunitaria y Turnos por WhatsApp</title>
+  <meta name="description" content="Portal comunitario de Apóstoles, Misiones: Cartelera digital de profesionales, comercios, servicios, teléfonos útiles y gestión de turnos por WhatsApp sin filas ni apps.">
+  <meta property="og:title" content="ITe Apóstoles — Cartelera de la Comunidad y Turnos por WhatsApp">
+  <meta property="og:description" content="Cartelera digital de profesionales, comercios, servicios y CVs en Apóstoles, Misiones. Contacto directo por WhatsApp y gestión ágil de turnos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apostoles.ar/">
+  <meta property="og:site_name" content="ITe Apóstoles">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ITe Apóstoles — Cartelera Comunitaria y Turnos por WhatsApp">
+  <meta name="twitter:description" content="Portal comunitario de Apóstoles, Misiones: Cartelera interactiva, teléfonos de emergencia y turnos por WhatsApp.">
+  <meta name="twitter:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <link rel="canonical" href="https://apostoles.ar/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧉</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ITe Apóstoles",
+    "url": "https://apostoles.ar/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "WhatsApp Web / iOS / Android",
+    "description": "Plataforma comunitaria de gestión de turnos por WhatsApp y directorio de servicios y comercios para Apóstoles, Misiones, Capital Nacional e Internacional de la Yerba Mate.",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Apóstoles, Misiones, Argentina",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -27.9167,
+        "longitude": -55.7667
+      },
+      "postalCode": "3350"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ITe.ar",
+      "url": "https://apostoles.ar/"
+    }
+  }
+  </script>
+
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
+    /* ── Layout helpers ────────────────────────────────────── */
+    .section     { padding: 4.5rem 0; }
+    .section-alt { background: var(--bg-alt); }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: .5rem;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2.75rem;
+      font-size: 1.02rem;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.35rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.15rem; }
+
+    /* ── Navbar ────────────────────────────────────────────── */
+    .navbar-links { display: flex; gap: 1.35rem; font-size: .88rem; align-items: center; }
+    .navbar-links a { color: var(--muted); font-weight: 500; transition: color .2s; }
+    .navbar-links a:hover { color: var(--purple); }
+    .nav-cartelera-badge {
+      font-weight: 700;
+      color: #fff !important;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 100%);
+      padding: .4rem .9rem;
+      border-radius: 99px;
+      box-shadow: 0 2px 10px rgba(124, 53, 239, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-cartelera-badge:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 15px rgba(124, 53, 239, 0.35);
+      color: #fff !important;
+    }
+    .btn-wa-nav {
+      background: var(--green-wa);
+      color: #fff;
+      padding: .45rem 1.05rem;
+      border-radius: 8px;
+      font-size: .86rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .btn-wa-nav:hover { background: var(--green-wa-dk); transform: translateY(-1px); }
+
+    /* ── Hero ──────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, #2e1065 0%, #581c87 35%, #7c35ef 80%, #9333ea 100%);
+      color: #fff;
+      padding: 5rem 0 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: .35rem 1.1rem;
+      border-radius: 99px;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 5.5vw, 3.3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,.2);
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: #fef08a; font-weight: 700; }
+    .hero-desc {
+      font-size: clamp(1rem, 2.3vw, 1.18rem);
+      opacity: .94;
+      max-width: 600px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.65;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; align-items: center; position: relative; z-index: 2; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green-wa);
+      color: #fff;
+      padding: .9rem 1.85rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.02rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      transition: transform .15s, background .2s;
+    }
+    .btn-primary:hover { background: var(--green-wa-dk); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      padding: .9rem 1.85rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      border: 2px solid rgba(255,255,255,.4);
+      transition: background .2s, transform .15s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.28); transform: translateY(-2px); }
+    
+    .cta-suggestion {
+      position: absolute;
+      top: -38px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fef08a;
+      color: #854d0e;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 99px;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      z-index: 10;
+      animation: floatBadge 2s ease-in-out infinite;
+      border: 1px solid #fde047;
+      pointer-events: none;
+    }
+    .cta-arrow {
+      font-size: 1.1rem;
+      line-height: 1;
+      display: inline-block;
+      animation: bounceArrow 1s ease-in-out infinite alternate;
+    }
+    
+    @keyframes floatBadge {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-5px); }
+    }
+    @keyframes bounceArrow {
+      from { transform: translateY(0); }
+      to { transform: translateY(2px); }
+    }
+
+    .hero-note {
+      margin-top: 1.75rem;
+      font-size: .85rem;
+      opacity: .85;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: system-ui, sans-serif;
-      background: #0d1b2a;
-      color: #e0e1dd;
+      gap: 1.35rem;
+      flex-wrap: wrap;
     }
-    h1 { font-size: 2.5rem; letter-spacing: 0.05em; }
+    .hero-note span { display: flex; align-items: center; gap: .35rem; }
+
+    /* ── Hero Layout ────────────────────────────────────────── */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-text-side { text-align: center; }
+    .hero-image-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-shield-img {
+      height: 200px;
+      width: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      border: 3.5px solid rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .hero-shield-img:hover {
+      transform: scale(1.06) rotate(1.5deg);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (min-width: 820px) {
+      .hero-layout {
+        grid-template-columns: 1.25fr 0.75fr;
+        text-align: left;
+        gap: 3.5rem;
+      }
+      .hero-text-side { text-align: left; }
+      .hero-image-side { justify-content: flex-end; }
+      .hero-shield-img { height: 280px; }
+      .hero-desc { margin: 0 0 2.25rem 0; }
+      .hero-cta { justify-content: flex-start; }
+      .hero-note { justify-content: flex-start; }
+    }
+
+    /* ── Stats bar ─────────────────────────────────────────── */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1.85rem 0;
+    }
+    .stats-bar .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.75rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--purple);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: .3rem;
+      font-weight: 500;
+    }
+
+    /* ── Tarjetas de Teléfonos Útiles ───────────────────────── */
+    .phone-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.35rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+      transition: border-color .2s, transform .15s, box-shadow .2s;
+    }
+    .phone-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .phone-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .phone-icon {
+      font-size: 1.8rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--purple-light);
+      flex-shrink: 0;
+    }
+    .phone-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: .2rem; }
+    .phone-card p { font-size: .84rem; color: var(--muted); line-height: 1.45; }
+    .phone-number {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin-top: .2rem;
+      display: inline-block;
+    }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: .55rem .9rem;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: background .2s, color .2s;
+    }
+    .btn-call:hover {
+      background: var(--purple);
+      color: #fff;
+    }
+
+    /* ── Cartelera Banner ────────────────────────────────────── */
+    .cartelera-card {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 50%, var(--purple-dark) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 2rem;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(124, 53, 239, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .cartelera-content h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .cartelera-content p {
+      color: #ede9fe;
+      font-size: 1rem;
+      line-height: 1.65;
+      max-width: 640px;
+      opacity: 0.95;
+    }
+    .btn-cartelera {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green-wa);
+      color: #fff;
+      padding: 0.9rem 1.85rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(22, 152, 83, 0.4);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-cartelera:hover {
+      background: var(--green-wa-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(22, 152, 83, 0.5);
+    }
+    .cartelera-preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+      height: 120px;
+    }
+    .preview-tarjeta {
+      width: 70px;
+      height: 90px;
+      background: #fff;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      position: absolute;
+      transition: transform 0.3s;
+    }
+    .preview-tarjeta.f1 { transform: rotate(-10deg) translate(-40px, -5px); z-index: 1; }
+    .preview-tarjeta.f2 { transform: rotate(5deg) translate(0px, 5px); z-index: 3; border-color: var(--purple); }
+    .preview-tarjeta.f3 { transform: rotate(15deg) translate(40px, -10deg); z-index: 2; }
+    .cartelera-card:hover .preview-tarjeta.f1 { transform: rotate(-18deg) translate(-50px, -10px) scale(1.05); }
+    .cartelera-card:hover .preview-tarjeta.f2 { transform: rotate(0deg) translate(0px, 0px) scale(1.1); }
+    .cartelera-card:hover .preview-tarjeta.f3 { transform: rotate(22deg) translate(50px, -15px) scale(1.05); }
+
+    @media (max-width: 768px) {
+      .cartelera-card {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        text-align: center;
+      }
+      .cartelera-content p { margin: 0 auto; }
+      .cartelera-preview { display: none; }
+    }
+
+    /* ── Use Cases ─────────────────────────────────────────── */
+    .usecase-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border-color .2s, transform .15s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .usecase-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .usecase-icon { font-size: 2rem; }
+    .usecase-card h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; }
+    .usecase-card p  { font-size: .88rem; color: var(--muted); line-height: 1.55; flex: 1; }
+    .usecase-tag {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--purple);
+      background: var(--purple-light);
+      padding: .2rem .65rem;
+      border-radius: 99px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    /* ── Steps ─────────────────────────────────────────────── */
+    .step-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.85rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .step-num {
+      width: 2.75rem; height: 2.75rem;
+      background: var(--purple-light);
+      color: var(--purple);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.15rem;
+      margin: 0 auto 1rem;
+    }
+    .step-icon { font-size: 2.2rem; margin-bottom: .75rem; }
+    .step-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .4rem; }
+    .step-card p  { font-size: .88rem; color: var(--muted); }
+    .step-arrow { display: none; color: var(--purple); font-size: 1.5rem; align-self: center; }
+    @media (min-width: 720px) {
+      .steps-grid {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        gap: .75rem;
+        align-items: start;
+      }
+      .step-arrow { display: flex; }
+    }
+
+    /* ── Org CTA ────────────────────────────────────────────── */
+    .org-cta {
+      background: #0f172a;
+      color: #fff;
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .org-cta h3 {
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+    .org-cta p { color: #94a3b8; font-size: .95rem; line-height: 1.55; }
+    .btn-light {
+      background: #fff;
+      color: var(--purple-dark);
+      padding: .85rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .btn-light:hover { background: var(--purple-light); transform: translateY(-2px); }
+    @media (max-width: 680px) {
+      .org-cta { grid-template-columns: 1fr; }
+      .btn-light { width: 100%; justify-content: center; }
+    }
+
+    /* ── FAQ ────────────────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      text-align: left; padding: 1.15rem 0;
+      font-size: 1rem; font-weight: 600;
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; color: var(--text);
+    }
+    .faq-q .arrow { transition: transform .25s; font-size: 1rem; color: var(--purple); flex-shrink: 0; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 0 1.15rem;
+      font-size: .92rem; color: var(--muted); line-height: 1.65;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA final ─────────────────────────────────────────── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      color: #fff; text-align: center; padding: 4.5rem 0;
+    }
+    .cta-final h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; margin-bottom: .75rem; }
+    .cta-final p  { opacity: .9; margin-bottom: 2rem; font-size: 1.02rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* ── WhatsApp float ─────────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+      background: var(--green-wa); color: #fff;
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(22, 152, 83, 0.5);
+      transition: transform .2s, background .2s; font-size: 1.6rem;
+    }
+    .wa-float:hover { transform: scale(1.1); background: var(--green-wa-dk); }
+
+    @media (max-width: 600px) {
+      .navbar-links { display: none; }
+      .section { padding: 3rem 0; }
+      .stat-num { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>apostoles.ar</h1>
+
+<!-- ── Navbar ───────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles" style="height: 32px; width: 32px; object-fit: contain;">
+      ITe Apóstoles
+    </a>
+    <div class="navbar-links">
+      <a href="#telefonos-utiles">Teléfonos útiles</a>
+      <a href="#turnos">Turnos</a>
+      <a href="#atractivos">Turismo</a>
+      <a href="#casos-de-uso">Beneficios</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+      <a href="tablero.html" class="nav-cartelera-badge">✨ Cartelera</a>
+      <a class="btn-wa-nav" href="https://wa.me/5493743434312?text=Hola! Quiero pedir un turno en Apóstoles" onclick="irAlBot('Hola! Quiero pedir un turno en Apóstoles'); return false;">
+        📲 Pedir turno
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container hero-layout">
+    <div class="hero-text-side">
+      <span class="hero-badge">🧉 Apóstoles, Misiones — Capital Nacional de la Yerba Mate</span>
+      <h1>Cartelera de la Comunidad<br><span>y Turnos por WhatsApp</span></h1>
+      <p class="hero-desc">
+        Explorá el directorio digital de profesionales, oficios, comercios y servicios de Apóstoles. Contactate al instante por WhatsApp y solicitá turnos de manera ágil sin esperas ni aplicaciones complejas.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="tablero.html" style="position: relative; background: var(--purple-mid); box-shadow: 0 4px 15px rgba(124, 53, 239, 0.35);">
+          <span class="cta-suggestion">
+            Directorio local <span class="cta-arrow">↓</span>
+          </span>
+          🖼️ Ver Tablero de Tarjetas
+        </a>
+        <a class="btn-primary" href="https://wa.me/5493743454291?text=Hola! Quiero publicar mi tarjeta de Apóstoles" onclick="irAlAdmin('Hola! Quiero publicar mi tarjeta de Apóstoles'); return false;" style="background: var(--green-wa); box-shadow: 0 4px 15px rgba(22, 152, 83, 0.35);">
+          📲 Sumar mi Tarjeta Gratis
+        </a>
+      </div>
+      <p class="hero-note">
+        <span>✔ 100% Gratuito para vecinos y comercios</span>
+        <span>✔ Contacto directo al celular</span>
+        <span>✔ Búsqueda rápida por rubros</span>
+      </p>
+    </div>
+    <div class="hero-image-side">
+      <a href="tablero.html" aria-label="Ver Tablero de Tarjetas">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles, Misiones" class="hero-shield-img">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Turnos Banner ────────────────────────────────────────── -->
+<section id="turnos" class="section-alt" style="padding: 2.75rem 0 1.5rem 0; border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="cartelera-card">
+      <div class="cartelera-content">
+        <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.3); margin-bottom: 0.75rem;">🤖 GESTIÓN DE TURNOS AUTOMÁTICA</span>
+        <h2>Turnos por WhatsApp sin Filas ni Esperas</h2>
+        <p>
+          Automatizamos la gestión y confirmación de turnos para organismos públicos, consultorios y entidades privadas en Apóstoles a través de WhatsApp. Sin necesidad de descargar aplicaciones ni recordar contraseñas.
+        </p>
+        <div style="margin-top: 1.35rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a class="btn-cartelera" href="https://wa.me/5493743434312?text=Hola! Quiero pedir un turno para trámites en Apóstoles" onclick="irAlBot('Hola! Quiero pedir un turno para trámites en Apóstoles'); return false;">
+            💬 Pedir Turno por WhatsApp
+          </a>
+          <a class="btn-secondary" href="#para-organizaciones" style="font-size: 0.95rem; font-weight: 700; padding: 0.8rem 1.6rem; border-radius: 10px;">
+            🏛️ Implementar en mi entidad
+          </a>
+        </div>
+      </div>
+      <div class="cartelera-preview">
+        <div class="preview-tarjeta f1">🗓️</div>
+        <div class="preview-tarjeta f2">🤖</div>
+        <div class="preview-tarjeta f3">✅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats bar ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">WhatsApp — el canal que todos usan</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt; 60s</div>
+      <div class="stat-label">Tiempo medio para solicitar turno</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Disponibilidad del asistente bot</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Apps o descargas requeridas</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Teléfonos Útiles e Instituciones ─────────────────────── -->
+<section id="telefonos-utiles" class="section">
+  <div class="container">
+    <h2 class="section-title">🏛️ Teléfonos Útiles y Emergencias en Apóstoles</h2>
+    <p class="section-sub">Información y números de contacto directo para trámites, salud y asistencia inmediata en la ciudad.</p>
+    
+    <div class="grid-4">
+      <div class="phone-card">
+        <div class="phone-header">
+          <div class="phone-icon">🏥</div>
+          <div>
+            <h3>Hospital Dr. Bernardo Allassia</h3>
+            <p>Tucumán 569, Apóstoles</p>
+            <span class="phone-number">03758-422666</span>
+          </div>
+        </div>
+        <a class="btn-call" href="tel:+543758422666">📞 Llamar al Hospital</a>
+      </div>
+
+      <div class="phone-card">
+        <div class="phone-header">
+          <div class="phone-icon">🚒</div>
+          <div>
+            <h3>Bomberos UR-VII</h3>
+            <p>Pueyrredón 742, Apóstoles</p>
+            <span class="phone-number">03758-423444</span>
+          </div>
+        </div>
+        <a class="btn-call" href="tel:+543758423444">📞 Llamar Bomberos (100)</a>
+      </div>
+
+      <div class="phone-card">
+        <div class="phone-header">
+          <div class="phone-icon">👮</div>
+          <div>
+            <h3>Policía Seccional 1°</h3>
+            <p>Mariano Moreno 723, Apóstoles</p>
+            <span class="phone-number">03758-422555</span>
+          </div>
+        </div>
+        <a class="btn-call" href="tel:+543758422555">📞 Llamar Policía (911)</a>
+      </div>
+
+      <div class="phone-card">
+        <div class="phone-header">
+          <div class="phone-icon">🏛️</div>
+          <div>
+            <h3>Municipalidad de Apóstoles</h3>
+            <p>Juan de San Martín 70 (06:30 a 12:30)</p>
+            <span class="phone-number">03758-423040</span>
+          </div>
+        </div>
+        <a class="btn-call" href="https://www.apostoles.gob.ar" target="_blank" rel="noopener">🌐 Web Oficial Municipal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Identidad & Turismo Yerbatero ────────────────────────── -->
+<section id="atractivos" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">🌿 Identidad, Historia y Tradición Yerbatera</h2>
+    <p class="section-sub">Descubrí la cuna de la yerba mate en Argentina, su legado jesuítico y la fuerza de su producción.</p>
+
+    <div class="grid-3">
+      <div class="usecase-card">
+        <div class="usecase-icon">🧉</div>
+        <span class="badge badge-yerba">Evento Emblemático</span>
+        <h3>Fiesta Nacional de la Yerba Mate</h3>
+        <p>Gran celebración anual que reúne a productores, artistas, expositores y visitantes de todo el país en el predio de la Expo Yerba con gastronomía, shows y jornadas tecnológicas.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">🏭</div>
+        <span class="badge badge-yerba">Patrimonio Histórico</span>
+        <h3>Museo Juan Szychowski (Amanda)</h3>
+        <p>Ubicado en el predio de La Cachuera, rescata la epopeya de los inmigrantes polacos, molinos de agua, turbinas y la historia viva de la yerba mate en la región.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">🏕️</div>
+        <span class="badge badge-green">Naturaleza y Relax</span>
+        <h3>Balneario Arroyo Chimiray</h3>
+        <p>Hermoso camping municipal y balneario sobre las aguas del arroyo Chimiray, límite natural con la provincia de Corrientes, ideal para disfrutar en familia al aire libre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cartelera Destacada ──────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div style="background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2.75rem 2rem; text-align: center; box-shadow: var(--shadow);">
+      <span class="badge badge-purple" style="margin-bottom: 0.75rem;">DIRECTORIO INTERACTIVO</span>
+      <h2 style="font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 800; margin-bottom: 0.75rem;">¿Buscás profesionales, comercios o servicios en Apóstoles?</h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 1.75rem; font-size: 1rem;">
+        Accedé a nuestra Cartelera Digital con buscador integrado por rubros, ampliá las tarjetas y conectá al instante vía WhatsApp.
+      </p>
+      <a class="btn-primary" href="tablero.html" style="background: var(--purple); font-size: 1.05rem;">
+        🖼️ Abrir Tablero de Tarjetas de Apóstoles
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Casos de Uso ─────────────────────────────────────────── -->
+<section id="casos-de-uso" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">💡 Soluciones para Cada Necesidad</h2>
+    <p class="section-sub">Facilitamos la interacción diaria entre vecinos, prestadores de servicios y organizaciones.</p>
+
+    <div class="grid-3">
+      <div class="usecase-card">
+        <div class="usecase-icon">🏥</div>
+        <span class="usecase-tag">Salud y Consultorios</span>
+        <h3>Turnos Médicos y Especialistas</h3>
+        <p>Agendamiento automatizado por WhatsApp con recordatorios previos para reducir el ausentismo y organizar salas de espera.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">🏛️</div>
+        <span class="usecase-tag">Organismos Públicos</span>
+        <h3>Atención Ciudadana y Trámites</h3>
+        <p>Organización de turnos para licencias, recaudaciones y operativos especiales evitando aglomeraciones y largas colas.</p>
+      </div>
+
+      <div class="usecase-card">
+        <div class="usecase-icon">🛍️</div>
+        <span class="usecase-tag">Comercios y Oficios</span>
+        <h3>Difusión y Contacto Directo</h3>
+        <p>Publicación de tarjetas comerciales para recibir consultas directas en el celular de potenciales clientes locales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cómo funciona ────────────────────────────────────────── -->
+<section id="como-funciona" class="section">
+  <div class="container">
+    <h2 class="section-title">⚡ Cómo Funciona</h2>
+    <p class="section-sub">Simple, accesible y sin barreras tecnológicas para toda la comunidad.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-icon">💬</div>
+        <h3>Escribí al WhatsApp</h3>
+        <p>Iniciás una conversación con un simple mensaje al número oficial del bot o al contacto de la tarjeta.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-icon">🤖</div>
+        <h3>Elegí la opción</h3>
+        <p>El asistente interactivo te guía paso a paso para seleccionar el día, horario o motivo de tu consulta.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-icon">✅</div>
+        <h3>Confirmación al instante</h3>
+        <p>Recibís tu comprobante directamente en WhatsApp con todos los datos y recordatorio automático.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Para organizaciones ──────────────────────────────────── -->
+<section id="para-organizaciones" class="section section-alt">
+  <div class="container">
+    <div class="org-cta">
+      <div>
+        <h3>¿Gestionás una institución o empresa en Apóstoles?</h3>
+        <p>Implementá nuestro sistema de turnos conversacionales por WhatsApp y modernizá la atención a tus clientes o ciudadanos en menos de 48 horas.</p>
+      </div>
+      <div>
+        <a class="btn-light" href="https://wa.me/5493743454291?text=Hola! Me interesa implementar el sistema de turnos en Apóstoles" onclick="irAlAdmin('Hola! Me interesa implementar el sistema de turnos en Apóstoles'); return false;">
+          💬 Hablar con el equipo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────────────── -->
+<section id="faq" class="section">
+  <div class="container" style="max-width: 780px;">
+    <h2 class="section-title">❓ Preguntas Frecuentes</h2>
+    <p class="section-sub">Respuestas a las dudas habituales sobre el funcionamiento de la plataforma.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Necesito descargar alguna aplicación para sacar turno?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          No. El sistema funciona íntegramente a través de WhatsApp, la aplicación que ya tenés instalada en tu teléfono.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Tiene algún costo publicar mi comercio o servicio en la cartelera?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          No, la publicación de tarjetas para comerciantes, profesionales y vecinos de Apóstoles es 100% gratuita. Solo tenés que enviar tu flyer o datos por WhatsApp.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Puedo cancelar o reprogramar un turno solicitado?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Sí, desde la misma conversación de WhatsApp podés solicitar la cancelación o reprogramación del turno en cualquier momento.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Cómo me sumo a la cartelera como profesional o empresa?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Hacé clic en el botón "Sumar mi Tarjeta Gratis" o escribinos directamente para enviar tu imagen o datos de contacto.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Final ────────────────────────────────────────────── -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Conectá con la comunidad de Apóstoles</h2>
+    <p>Agilizá tus trámites y encontrá los mejores servicios locales en un solo lugar.</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a class="btn-primary" href="tablero.html" style="background: #fff; color: var(--purple-dark);">
+        🖼️ Explorar Cartelera
+      </a>
+      <a class="btn-secondary" href="https://wa.me/5493743454291?text=Hola! Quiero sumar mi tarjeta en Apóstoles" onclick="irAlAdmin('Hola! Quiero sumar mi tarjeta en Apóstoles'); return false;">
+        📲 Publicar mi Tarjeta
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">
+      <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 24px; width: 24px; object-fit: contain;">
+      ITe Apóstoles — Portal Comunitario
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="tablero.html">Cartelera Digital</a>
+      <a href="#telefonos-utiles">Teléfonos útiles</a>
+      <a href="https://www.apostoles.gob.ar" target="_blank" rel="noopener">Municipalidad</a>
+    </div>
+    <p style="width: 100%; font-size: 0.8rem; color: #64748b; margin-top: 1rem; text-align: center;">
+      © 2026 ITe Apóstoles · Capital Nacional e Internacional de la Yerba Mate · Misiones, Argentina.
+    </p>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Float ───────────────────────────────────────── -->
+<a class="wa-float" href="https://wa.me/5493743454291?text=Hola! Me contacto desde el portal de Apóstoles" onclick="irAlAdmin('Hola! Me contacto desde el portal de Apóstoles'); return false;" aria-label="Contacto por WhatsApp">
+  💬
+</a>
+
+<script src="assets/app.js"></script>
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
 </body>
 </html>

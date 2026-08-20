@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero de Tarjetas — ITe Apóstoles</title>
+  <meta name="description" content="Cartelera digital y directorio de emprendimientos, profesionales, servicios, oficios y CVs de Apóstoles, Misiones. Contacto directo por WhatsApp.">
+
+  <meta property="og:title" content="Tablero de Tarjetas — ITe Apóstoles">
+  <meta property="og:description" content="Cartelera digital y directorio de emprendimientos, profesionales, servicios y CVs de Apóstoles, Misiones. Contacto directo por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apostoles.ar/tablero.html">
+  <meta property="og:site_name" content="ITe Apóstoles">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tablero de Tarjetas — ITe Apóstoles">
+  <meta name="twitter:description" content="Cartelera digital de servicios, comercios, fletes y profesionales en Apóstoles, Misiones.">
+  <meta name="twitter:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <link rel="canonical" href="https://apostoles.ar/tablero.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧉</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Cartelera Digital de Emprendimientos y Servicios de Apóstoles",
+    "url": "https://apostoles.ar/tablero.html",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Wolhein Gabriel - Desarrollo y Soluciones TI",
+        "description": "Desarrollador de software y automatizaciones en Misiones."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RELTEC Soluciones",
+        "description": "Refrigeración, aire acondicionado, electricidad y domótica."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "CR Informática",
+        "description": "Servicio técnico especializado en computación y soporte técnico."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Rubén Seguridad Electrónica",
+        "description": "Cámaras de seguridad, alarmas, redes WiFi e instalación Starlink."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Aberturas METALUM",
+        "description": "Carpintería en aluminio a medida, ventanas y puertas."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Overrides base (tablero) ──────────────────────────── */
+    body { background: #fdfdfd; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .btn-back {
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 600;
+      transition: color .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .btn-back:hover {
+      color: var(--purple);
+    }
+
+    /* ── Header Sección ────────────────────────────────────── */
+    .header-section {
+      text-align: center;
+      padding: 3rem 0 2rem 0;
+      background: linear-gradient(180deg, var(--purple-light) 0%, rgba(253, 253, 253, 1) 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: .3rem .8rem;
+      border-radius: 99px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-purple {
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      border: 1px solid #ddd6fe;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: .6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── Buscador y Filtros ─────────────────────────────────── */
+    .search-filter-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+    }
+
+    .search-row {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(124, 53, 239, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+      font-size: 1.1rem;
+    }
+
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-right: .5rem;
+    }
+
+    .btn-filter {
+      background: #f3f4f6;
+      border: 1px solid transparent;
+      color: var(--text);
+      padding: .45rem 1rem;
+      border-radius: 99px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+
+    .btn-filter:hover {
+      background: #e5e7eb;
+    }
+
+    .btn-filter.active {
+      background: var(--purple);
+      color: #fff;
+    }
+
+    /* ── Grid del Tablero ──────────────────────────────────── */
+    .tablero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .tarjeta-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tarjeta-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--purple-mid);
+    }
+
+    .tarjeta-img-container {
+      position: relative;
+      background: #f3f4f6;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .tarjeta-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .3s;
+    }
+
+    .tarjeta-card:hover .tarjeta-img {
+      transform: scale(1.03);
+    }
+
+    .tarjeta-zoom-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .2s;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      gap: 0.35rem;
+    }
+
+    .tarjeta-img-container:hover .tarjeta-zoom-overlay {
+      opacity: 1;
+    }
+
+    .tarjeta-info {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .tarjeta-cat-badge {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--purple);
+      background: var(--purple-light);
+      padding: .15rem .5rem;
+      border-radius: 99px;
+      width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: .5rem;
+    }
+
+    .tarjeta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: .4rem;
+    }
+
+    .tarjeta-desc {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .btn-wa-contact {
+      background: var(--green-wa);
+      color: #fff;
+      padding: .65rem;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      transition: background .2s, transform .1s;
+      width: 100%;
+    }
+
+    .btn-wa-contact:hover {
+      background: var(--green-wa-dk);
+    }
+
+    .btn-wa-contact:active {
+      transform: scale(0.98);
+    }
+
+    /* ── Mensaje de no resultados ──────────────────────────── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      display: none;
+    }
+
+    .no-results-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Banner Sumar Tarjeta ────────────────────────────────── */
+    .sumar-tarjeta-box {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sumar-tarjeta-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sumar-tarjeta-box h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+
+    .sumar-tarjeta-box p {
+      font-size: .95rem;
+      max-width: 580px;
+      margin: 0 auto 1.5rem;
+      opacity: .9;
+    }
+
+    .btn-sumar {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green-wa);
+      color: #fff;
+      padding: .85rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(22, 152, 83, 0.3);
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-sumar:hover {
+      background: var(--green-wa-dk);
+      transform: translateY(-2px);
+    }
+
+    /* ── Lightbox Modal ────────────────────────────────────── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      padding: 1.5rem;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid #fff;
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+    }
+
+    .lightbox.active .lightbox-img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--purple-light);
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .header-section { padding: 2.25rem 0 1.5rem 0; }
+      .search-filter-box { padding: 1rem; margin-bottom: 1.75rem; }
+      .tablero-grid { gap: 1.25rem; margin-bottom: 2.5rem; }
+      .sumar-tarjeta-box { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navbar ───────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 30px; width: 30px; object-fit: contain;">
+        ITe Apóstoles
+      </a>
+      <a class="btn-back" href="index.html">
+        ← Volver al inicio
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── Header Sección ────────────────────────────────────── -->
+  <header class="header-section">
+    <div class="container">
+      <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles, Misiones" style="height: 75px; width: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));">
+      </div>
+      <span class="badge badge-purple">📍 APÓSTOLES, MISIONES</span>
+      <h1>Cartelera de Emprendimientos, Profesionales y CVs</h1>
+      <p class="subtitle">
+        Encontrá servicios locales, oficios, profesionales autónomos y CVs de postulantes. Ampliá las tarjetas para ver más detalles y contactalos directamente por WhatsApp.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Contenido Principal ─────────────────────────────────── -->
+  <main class="container">
+
+    <!-- Buscador y Filtros -->
+    <div class="search-filter-box">
+      <div class="search-row">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input"
+          placeholder="Buscar por rubro, servicio, nombre, oficio o perfil (ej: informatica, electricista, refrigeracion, fletes)...">
+      </div>
+      <div class="filters-row">
+        <span class="filter-label">Filtrar por:</span>
+        <button class="btn-filter active" data-category="todos">Todos</button>
+        <button class="btn-filter" data-category="profesionales">Profesionales</button>
+        <button class="btn-filter" data-category="emprendimientos">Emprendimientos</button>
+        <button class="btn-filter" data-category="empresas">Empresas</button>
+        <button class="btn-filter" data-category="cvs">CVs Personales</button>
+        <span class="result-count" id="result-count" style="margin-left:auto; font-size:.84rem; color:var(--muted); font-weight:600;"></span>
+      </div>
+    </div>
+
+    <!-- Grid del Tablero -->
+    <div class="tablero-grid" id="tablero-grid">
+
+      <!-- Tarjeta 1: Wolhein Gabriel (CV / Postulante) -->
+      <div class="tarjeta-card" data-category="cvs"
+        data-keywords="wolhein gabriel cv curriculum vitae desarrollador programador sistemas informatica automatizaciones software desarrollo tecnologia apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/cv_wolhein_gabriel.webp')">
+          <img class="tarjeta-img" src="assets/cv_wolhein_gabriel.webp" width="1024" height="1024" alt="CV Wolhein Gabriel" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">CV / Postulante</span>
+          <h3 class="tarjeta-title">Wolhein Gabriel</h3>
+          <p class="tarjeta-desc">
+            Desarrollador de Soluciones y automatizaciones con experiencia en análisis, diseño y puesta en marcha de sistemas informáticos y automatizaciones para empresas.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola Gabriel! Vi tu CV en ITe Apóstoles y quería consultarte."
+            onclick="irAContactar('5493743454291', 'Hola Gabriel! Vi tu CV en ITe Apóstoles y quería consultarte.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: RELTEC Soluciones (Profesional/Empresa) -->
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="refrigeracion aire acondicionado split electricista electricidad instalacion tecnologia domotica automatizacion alarmas camaras reltec apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/reltec_soluciones.webp')">
+          <img class="tarjeta-img" src="assets/reltec_soluciones.webp" width="701" height="1108" alt="RELTEC Soluciones" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">RELTEC Soluciones</h3>
+          <p class="tarjeta-desc">
+            Instalación, mantenimiento y reparación de aire acondicionado (Split), instalaciones eléctricas domiciliarias e industriales, y domótica/automatización.
+          </p>
+          <div style="display:flex; gap:.5rem;">
+            <a class="btn-wa-contact" href="https://wa.me/5493743441580?text=Hola Kevin! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio."
+              onclick="irAContactar('5493743441580', 'Hola Kevin! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio.'); return false;"
+              style="flex:1;">
+              📲 Kevin
+            </a>
+            <a class="btn-wa-contact" href="https://wa.me/5493757508282?text=Hola Angelo! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio."
+              onclick="irAContactar('5493757508282', 'Hola Angelo! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio.'); return false;"
+              style="flex:1; background:#0055A4;">
+              📲 Angelo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3: Rubén Seguridad Electrónica (Profesional) -->
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="ruben seguridad electronica camaras cctv alarmas wifi redes lan fibra optica starlink informatica soporte tecnico computacion apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/ruben_seguridad_electronica.webp')">
+          <img class="tarjeta-img" src="assets/ruben_seguridad_electronica.webp" width="1080" height="1080" alt="Rubén Seguridad Electrónica" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">Rubén Seguridad Electrónica</h3>
+          <p class="tarjeta-desc">
+            Instalación y configuración de cámaras de seguridad CCTV, sistemas de alarmas, redes WiFi y cableadas, enlaces inalámbricos, fibra óptica e instalación de antenas Starlink.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola Rubén! Vi tu tarjeta en ITe Apóstoles y quería consultar por una instalación/servicio."
+            onclick="irAContactar('5493743454291', 'Hola Rubén! Vi tu tarjeta en ITe Apóstoles y quería consultar por una instalación/servicio.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4: CR Informática (Profesional/Servicio) -->
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="cr informatica computacion computadoras servicio tecnico reparacion mantenimiento soporte formateo windows pc notebook netbook apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/cr_informatica.webp')">
+          <img class="tarjeta-img" src="assets/cr_informatica.webp" width="1170" height="1194" alt="CR Informática" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">CR Informática</h3>
+          <p class="tarjeta-desc">
+            Servicio técnico especializado en computación, mantenimiento, soporte preventivo y correctivo, y reparación de computadoras, notebooks y equipos informáticos.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743486866?text=Hola! Vi tu tarjeta de CR Informática en ITe Apóstoles y quería hacerte una consulta."
+            onclick="irAContactar('5493743486866', 'Hola! Vi tu tarjeta de CR Informática en ITe Apóstoles y quería hacerte una consulta.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5: Aberturas METALUM (Empresa) -->
+      <div class="tarjeta-card" data-category="empresas"
+        data-keywords="aberturas metalum carpinteria aluminio ventanas puertas portones cerramientos perfiles metalica apostoles misiones atm construccion">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/metalum_aberturas.webp')">
+          <img class="tarjeta-img" src="assets/metalum_aberturas.webp" width="1254" height="1254" alt="Aberturas METALUM" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Empresas</span>
+          <h3 class="tarjeta-title">Aberturas METALUM</h3>
+          <p class="tarjeta-desc">
+            Carpintería en aluminio a medida. Fabricación y colocación de aberturas, ventanas, puertas y cerramientos de aluminio de alta resistencia y diseño.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743474818?text=Hola! Vi tu tarjeta de Aberturas Metalum en ITe Apóstoles y quería solicitar un presupuesto."
+            onclick="irAContactar('5493743474818', 'Hola! Vi tu tarjeta de Aberturas Metalum en ITe Apóstoles y quería solicitar un presupuesto.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6: Maderas del Norte (Empresa) -->
+      <div class="tarjeta-card" data-category="empresas"
+        data-keywords="maderas del norte venta de madera machimbre tirantes tablas postes casas premoldeadas construccion techos maderera apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/maderas_del_norte.webp')">
+          <img class="tarjeta-img" src="assets/maderas_del_norte.webp" width="1080" height="1080" alt="Maderas del Norte" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Empresas</span>
+          <h3 class="tarjeta-title">Maderas del Norte</h3>
+          <p class="tarjeta-desc">
+            Venta de maderas de primera calidad, tirantes, machimbres, vigas y kits de casas de madera para construcción tradicional y sustentable en la región.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola! Vi tu tarjeta de Maderas del Norte en ITe Apóstoles y quería consultar precios y stock."
+            onclick="irAContactar('5493743454291', 'Hola! Vi tu tarjeta de Maderas del Norte en ITe Apóstoles y quería consultar precios y stock.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 7: Somer Celulares (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="somer celulares reparacion celulares modulos pantallas baterias pines de carga fundas accesorios servicio tecnico telefonia movil apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/somer_celuares.webp')">
+          <img class="tarjeta-img" src="assets/somer_celuares.webp" width="720" height="1280" alt="Somer Celulares" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Somer Celulares</h3>
+          <p class="tarjeta-desc">
+            Servicio técnico y reparación multimarca de celulares. Cambio de módulos, pantallas, pines de carga, baterías y venta de accesorios.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743542289?text=Hola! Vi tu tarjeta de Somer Celulares en ITe Apóstoles y quería consultar por una reparación."
+            onclick="irAContactar('5493743542289', 'Hola! Vi tu tarjeta de Somer Celulares en ITe Apóstoles y quería consultar por una reparación.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 8: LF-Masoterapia y Terapias Corporales (Profesional) -->
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="lf masoterapia masajes terapias corporales descontracturantes relajantes maderoterapia piedras calientes ventosas salud bienestar apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/lf_masoterapia.webp')">
+          <img class="tarjeta-img" src="assets/lf_masoterapia.webp" width="908" height="1280" alt="LF-Masoterapia y Terapias Corporales" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">LF-Masoterapia y Terapias Corporales</h3>
+          <p class="tarjeta-desc">
+            Masajes descontracturantes, relajantes, maderoterapia, piedras calientes, ventosas, drenaje linfático y masaje facial. Especialidad en salud y bienestar femenino. Profesional matriculada.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743481476?text=Hola! Vi tu tarjeta de LF-Masoterapia en ITe Apóstoles y quería solicitar un turno."
+            onclick="irAContactar('5493743481476', 'Hola! Vi tu tarjeta de LF-Masoterapia en ITe Apóstoles y quería solicitar un turno.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 9: Lavandería Fer Kia (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="lavanderia lavarropa ropa secar frazadas acolchados ferkia lavadero limpieza ropa tintoreria apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/lavanderia_ferkia.webp')">
+          <img class="tarjeta-img" src="assets/lavanderia_ferkia.webp" width="1086" height="1448" alt="Lavandería Fer Kia" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Lavandería Fer Kia</h3>
+          <p class="tarjeta-desc">
+            Servicio de lavado y secado de ropa, acolchados, frazadas y cortinas. Prendas impecables, suaves y perfumadas con entrega puntual.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743472667?text=Hola! Vi tu tarjeta de Lavandería Fer Kia en ITe Apóstoles y quería hacerte una consulta."
+            onclick="irAContactar('5493743472667', 'Hola! Vi tu tarjeta de Lavandería Fer Kia en ITe Apóstoles y quería hacerte una consulta.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 10: Laura Giménez (CV / Postulante) -->
+      <div class="tarjeta-card" data-category="cvs"
+        data-keywords="laura gimenez cv curriculum vitae administracion secretaria recepcionista facturacion excel atencion al cliente apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/cv_laura_gimenez.webp')">
+          <img class="tarjeta-img" src="assets/cv_laura_gimenez.webp" width="1024" height="1024" alt="CV Laura Giménez" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">CV / Postulante</span>
+          <h3 class="tarjeta-title">Laura Giménez</h3>
+          <p class="tarjeta-desc">
+            Estudiante de Lic. en Administración con sólida experiencia en atención al público, facturación, cobranzas y gestión en planillas de cálculo. Disponibilidad horaria.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola Laura! Vi tu CV en ITe Apóstoles y quería consultarte por una oportunidad laboral."
+            onclick="irAContactar('5493743454291', 'Hola Laura! Vi tu CV en ITe Apóstoles y quería consultarte por una oportunidad laboral.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 11: Mateo Kaczarek (CV / Postulante) -->
+      <div class="tarjeta-card" data-category="cvs"
+        data-keywords="mateo kaczarek cv curriculum vitae tecnico electromecanico mantenimiento industrial electricista taller torneria apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/cv_mateo_kaczarek.webp')">
+          <img class="tarjeta-img" src="assets/cv_mateo_kaczarek.webp" width="1024" height="1024" alt="CV Mateo Kaczarek" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">CV / Postulante</span>
+          <h3 class="tarjeta-title">Mateo Kaczarek</h3>
+          <p class="tarjeta-desc">
+            Técnico con formación y experiencia en mantenimiento electromecánico industrial, instalaciones eléctricas, tableros y diagnóstico preventivo.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola Mateo! Vi tu CV en ITe Apóstoles y quería consultarte por una búsqueda laboral."
+            onclick="irAContactar('5493743454291', 'Hola Mateo! Vi tu CV en ITe Apóstoles y quería consultarte por una búsqueda laboral.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 12: SL Sonido e Iluminación (Servicio/Empresa) -->
+      <div class="tarjeta-card" data-category="empresas"
+        data-keywords="sl sonido iluminacion pantallas led dj eventos fiestas bodas cumpleaños 15 años recitales shows tecnicos sonido profesional apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/sl_sonido_iluminacion.webp')">
+          <img class="tarjeta-img" src="assets/sl_sonido_iluminacion.webp" width="1080" height="1080" alt="SL Sonido Iluminación" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Empresas</span>
+          <h3 class="tarjeta-title">SL Sonido · Iluminación · Pantalla</h3>
+          <p class="tarjeta-desc">
+            Equipamiento integral para eventos sociales, corporativos y festivales. Sistemas de sonido profesional, luces robóticas, ambientación y pantallas LED gigantes.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola! Vi tu tarjeta de SL Sonido en ITe Apóstoles y quería consultar presupuesto para un evento."
+            onclick="irAContactar('5493743454291', 'Hola! Vi tu tarjeta de SL Sonido en ITe Apóstoles y quería consultar presupuesto para un evento.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 13: Mini Fletes (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="mini fletes mudanzas traslados fletes furgon camioneta envios cargas repartos transporte apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/mini_fletes.webp')">
+          <img class="tarjeta-img" src="assets/mini_fletes.webp" width="720" height="1280" alt="Mini Fletes" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Mini Fletes & Mudanzas</h3>
+          <p class="tarjeta-desc">
+            Servicio de traslados urbanos y rurales en Apóstoles y alrededores. Mudanzas particulares, fletes de mercadería y repartos con cuidado y puntualidad.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743542289?text=Hola! Vi tu tarjeta de Mini Fletes en ITe Apóstoles y quería consultar por un traslado."
+            onclick="irAContactar('5493743542289', 'Hola! Vi tu tarjeta de Mini Fletes en ITe Apóstoles y quería consultar por un traslado.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 14: Motomandado Richart (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="motomandado richart moto envios cadeteria compras farmacia tramites mensajeria express delivery encomiendas apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/motomandado_richart.webp')">
+          <img class="tarjeta-img" src="assets/motomandado_richart.webp" width="1080" height="1080" alt="Motomandado Richart" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Motomandado Richart</h3>
+          <p class="tarjeta-desc">
+            Servicio de mensajería y cadetería express en Apóstoles. Realización de trámites, retiro de compras, farmacias, pago de servicios y entrega de encomiendas.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743542289?text=Hola Richart! Vi tu tarjeta en ITe Apóstoles y necesito un motomandado."
+            onclick="irAContactar('5493743542289', 'Hola Richart! Vi tu tarjeta en ITe Apóstoles y necesito un motomandado.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 15: Frutería Verdulería Gabys (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="fruteria verduleria gabys frutas verduras hortalizas alimentos saludables verdulero almacen fresco apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/fruteria_verduleria_gabys.webp')">
+          <img class="tarjeta-img" src="assets/fruteria_verduleria_gabys.webp" width="720" height="736" alt="Frutería Verdulería Gabys" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Frutería & Verdulería Gabys</h3>
+          <p class="tarjeta-desc">
+            Venta de frutas y verduras seleccionadas de máxima frescura. Calidad garantizada para la mesa familiar y comercios de la zona.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743481909?text=Hola! Vi tu tarjeta de Frutería Gabys en ITe Apóstoles y quería consultar por pedidos."
+            onclick="irAContactar('5493743481909', 'Hola! Vi tu tarjeta de Frutería Gabys en ITe Apóstoles y quería consultar por pedidos.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 16: Construcciones Miguel Angel Gitzel (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="construcciones miguel angel gitzel albanileria obras refacciones remodelaciones ampliaciones techos reformas albanil constructor apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/Const_gitzel.webp')">
+          <img class="tarjeta-img" src="assets/Const_gitzel.webp" width="640" height="640" alt="Construcciones Miguel Angel Gitzel" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Construcciones Miguel Ángel Gitzel</h3>
+          <p class="tarjeta-desc">
+            Construcciones en general, obras desde cero, ampliaciones de viviendas, refacciones integrales, mampostería, techados y terminaciones de calidad.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743455776?text=Hola! Vi tu tarjeta de Construcciones Gitzel en ITe Apóstoles y quería solicitar un presupuesto."
+            onclick="irAContactar('549374355776', 'Hola! Vi tu tarjeta de Construcciones Gitzel en ITe Apóstoles y quería solicitar un presupuesto.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 17: Mariana Gonzales - Enfermería a Domicilio (Emprendimiento) -->
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="enfermeria a domicilio cuidados inyectables salud curaciones signos vitales asistencia paciente adulto mayor mariana gonzales apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/GonzalesMariana.webp')">
+          <img class="tarjeta-img" src="assets/GonzalesMariana.webp" width="864" height="1224" alt="Enfermería a Domicilio" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Enfermería a Domicilio</h3>
+          <p class="tarjeta-desc">
+            Atención personalizada de enfermería domiciliaria: curaciones, colocación de inyectables, control de signos vitales, asistencia a adultos mayores y acompañamiento.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743616393?text=Hola Mariana! Vi tu tarjeta de Enfermería en ITe Apóstoles y quería consultar por una atención."
+            onclick="irAContactar('5493743616393', 'Hola Mariana! Vi tu tarjeta de Enfermería en ITe Apóstoles y quería consultar por una atención.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 18: MID Informática (Profesional/Servicio) -->
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="mid informatica soporte tecnico computadoras reparacion pc notebook celulares formateo software hardware impresoras apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox('assets/mid_informatica.webp')">
+          <img class="tarjeta-img" src="assets/mid_informatica.webp" width="1080" height="1080" alt="MID Informática" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">MID Informática</h3>
+          <p class="tarjeta-desc">
+            Servicio técnico integral de PC, notebooks y dispositivos móviles. Limpieza de virus, optimización de velocidad, reemplazo de componentes e instalación de software.
+          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743542289?text=Hola! Vi tu tarjeta de MID Informática en ITe Apóstoles y quería consultar por un servicio."
+            onclick="irAContactar('5493743542289', 'Hola! Vi tu tarjeta de MID Informática en ITe Apóstoles y quería consultar por un servicio.'); return false;">
+            📲 Enviar WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Mensaje cuando no hay resultados de búsqueda -->
+      <div class="no-results" id="no-results">
+        <div class="no-results-icon">🔎</div>
+        <h3>No encontramos resultados para tu búsqueda</h3>
+        <p>Probá con otros términos o seleccioná "Todos" en las categorías superiores.</p>
+      </div>
+
+    </div>
+
+    <!-- Banner Sumar Tarjeta -->
+    <div class="sumar-tarjeta-box">
+      <h2>¿Tenés un comercio, prestás un servicio o buscás trabajo en Apóstoles?</h2>
+      <p>
+        Publicá tu flyer o perfil en la cartelera de forma totalmente gratuita y recibí consultas directas en tu WhatsApp de vecinos y empresas de la zona.
+      </p>
+      <a class="btn-sumar" href="https://wa.me/5493743454291?text=Hola! Quiero sumar mi tarjeta en el Tablero de Apóstoles"
+        onclick="irAlAdmin('Hola! Quiero sumar mi tarjeta en el Tablero de Apóstoles'); return false;">
+        📲 Sumar mi Tarjeta Gratis
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── Lightbox Modal ────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxDirect()">✕</button>
+      <img src="" alt="Tarjeta Ampliada" class="lightbox-img" id="lightbox-img">
+    </div>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 24px; width: 24px; object-fit: contain;">
+        ITe Apóstoles — Cartelera Digital
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="tablero.html">Cartelera</a>
+        <a href="index.html#telefonos-utiles">Teléfonos útiles</a>
+        <a href="https://www.apostoles.gob.ar" target="_blank" rel="noopener">Municipalidad</a>
+      </div>
+      <p style="width: 100%; font-size: 0.8rem; color: #64748b; margin-top: 1rem; text-align: center;">
+        © 2026 ITe Apóstoles · Capital Nacional e Internacional de la Yerba Mate · Misiones, Argentina.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    // ── Lógica de Buscador y Filtros de Categoría ──────────────
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const cards = document.querySelectorAll('.tarjeta-card');
+    const noResults = document.getElementById('no-results');
+    const resultCount = document.getElementById('result-count');
+
+    let currentCategory = 'todos';
+    let currentSearchTerm = '';
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function filterCards() {
+      let visibleCount = 0;
+      const normalizedSearch = normalizeText(currentSearchTerm.trim());
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardKeywords = normalizeText(card.getAttribute('data-keywords') || '');
+        const cardTitle = normalizeText(card.querySelector('.tarjeta-title')?.textContent || '');
+        const cardDesc = normalizeText(card.querySelector('.tarjeta-desc')?.textContent || '');
+
+        const matchesCategory = (currentCategory === 'todos' || cardCategory === currentCategory);
+        const matchesSearch = normalizedSearch === '' ||
+          cardKeywords.includes(normalizedSearch) ||
+          cardTitle.includes(normalizedSearch) ||
+          cardDesc.includes(normalizedSearch);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+        resultCount.textContent = '0 resultados';
+      } else {
+        noResults.style.display = 'none';
+        resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'tarjeta' : 'tarjetas'}`;
+      }
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      currentSearchTerm = e.target.value;
+      filterCards();
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        currentCategory = button.getAttribute('data-category');
+        filterCards();
+      });
+    });
+
+    // Contador inicial
+    filterCards();
+
+    // ── Lightbox Modal ─────────────────────────────────────────
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(imgSrc) {
+      lightboxImg.src = imgSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxDirect() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 250);
+    }
+
+    function closeLightbox(e) {
+      if (e.target === lightbox) {
+        closeLightboxDirect();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightboxDirect();
+      }
+    });
+  </script>
+</body>
+</html>

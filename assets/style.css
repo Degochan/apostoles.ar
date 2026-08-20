@@ -1,0 +1,104 @@
+/* ── Base compartida ITe Apóstoles (index.html + tablero.html) ───────── */
+
+/* ── Variables de Diseño ─────────────────────────────────── */
+:root {
+  --purple:       #7c35ef;
+  --purple-dark:  #430a9c;
+  --purple-light: #f5f0ff;
+  --purple-mid:   #9456ff;
+  --green-yerba:  #2e7d32;
+  --green-wa:     #169853;
+  --green-wa-dk:  #0e753e;
+  --blue-ar:      #0055A4;
+  --teal:         #0d9488;
+  --amber:        #d97706;
+  --text:         #0f1219;
+  --text-muted:   #64748b;
+  --muted:        #6b778c;
+  --border:       #e2e8f0;
+  --bg-alt:       #f8fafc;
+  --radius:       14px;
+  --shadow:       0 2px 16px rgba(0,0,0,.06);
+  --shadow-md:    0 6px 24px rgba(0,0,0,.10);
+  --shadow-lg:    0 12px 32px rgba(0,0,0,.15);
+}
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Layout ────────────────────────────────────────────── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ── Badges ────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: .3rem .85rem;
+  border-radius: 99px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.badge-purple { background: var(--purple-light); color: var(--purple-dark); border: 1px solid #ddd6fe; }
+.badge-green  { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.badge-amber  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-yerba  { background: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
+
+/* ── Navbar ────────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: .85rem 0;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  gap: 1rem;
+}
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 0 2rem;
+  font-size: .88rem;
+  border-top: 1px solid #1e293b;
+}
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+footer a { color: #94a3b8; transition: color .2s; }
+footer a:hover { color: #fff; }
+.footer-brand { color: #fff; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }

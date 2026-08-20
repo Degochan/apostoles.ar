@@ -1,0 +1,34 @@
+# ITe Apóstoles — Plataforma Comunitaria, Turnos y Cartelera Digital
+
+> ITe (apostoles.ar) es el portal comunitario, sistema de gestión de turnos por WhatsApp y cartelera digital de emprendimientos, profesionales, servicios y oportunidades de Apóstoles, Misiones, Argentina. Conocida como la **Capital Nacional e Internacional de la Yerba Mate**.
+
+## Ubicación y Datos Geográficos
+- **Ciudad:** Apóstoles, Departamento Apóstoles, Provincia de Misiones, Argentina.
+- **Código Postal:** 3350
+- **Coordenadas:** -27.9167 S, -55.7667 O
+- **Identidad:** Cuna de la Yerba Mate, legado de las Misiones Jesuíticas Guaraníes (Reducción Santos Apóstoles Pedro y Pablo) y colonización polaco-ucraniana.
+
+## Servicios Principales
+- [Gestión de Turnos por WhatsApp](https://apostoles.ar/index.html): Sistema conversacional automatizado sin apps ni descargas para municipios, centros de salud, organismos públicos y empresas privadas en Apóstoles.
+- [Cartelera Digital de la Comunidad](https://apostoles.ar/tablero.html): Directorio interactivo local con contacto directo por WhatsApp para profesionales independientes, comercios, fletes, servicios técnicos y postulantes laborales.
+
+## Instituciones y Teléfonos de Emergencia en Apóstoles
+- **Municipalidad de Apóstoles**: Juan de San Martín 70 | Tel: (03758) 423040 / 423404 | Web: https://www.apostoles.gob.ar
+- **Hospital de Área Apóstoles "Dr. Bernardo Allassia"**: Tucumán 569 | Tel: (03758) 422666 / Emergencias: 107
+- **División Bomberos de Apóstoles (UR-VII)**: Pueyrredón 742 | Tel: (03758) 423444 / Emergencias: 100
+- **Comisaría Seccional Primera (UR-VII)**: Mariano Moreno 723 | Tel: (03758) 422555 / Emergencias: 911 / 101
+
+## Atractivos Turísticos y Productivos
+- **Fiesta Nacional e Internacional de la Yerba Mate**: Celebración anual emblemática en el Predio de la Expo Yerba.
+- **Casa del Mate**: Centro de interpretación, degustación e historia de la yerba mate.
+- **Museo Histórico Juan Szychowski (La Cachuera / Yerba Amanda)**: Patrimonio industrial, maquinarias históricas y orígenes de la colonización.
+- **Establecimiento Rosamonte (Hreñuk S.A.)**: Producción agroindustrial yerbatera líder.
+- **Balneario y Camping Municipal Arroyo Chimiray**: Entorno natural y recreativo sobre el arroyo limítrofe con Corrientes.
+- **Parque Centenario y Reserva Natural Urbana Tupambaé**: Espacios verdes y biodiversidad urbana.
+
+## Rubros Destacados en la Cartelera
+- **Servicios Técnicos & Reparaciones / Tecnología**: Soporte informático, redes, seguridad electrónica y telefonía móvil.
+- **Construcción & Hogar**: Maderas, carpintería en aluminio, albañilería, refacciones y mejoras.
+- **Servicios Domiciliarios & Logística**: Fletes, mudanzas, envíos, lavandería, enfermería a domicilio y terapias corporales.
+- **Comercios y Emprendimientos Locales**: Alimentos frescos, indumentaria, gastronomía y servicios para eventos.
+- **Postulantes de Empleo**: Base de CVs de profesionales, técnicos y perfiles administrativos de la región.
