@@ -1,6 +1,23 @@
 {
-    "updated_at": "2026-08-21T17:43:40+00:00",
+    "updated_at": "2026-08-21T19:12:01+00:00",
     "tarjetas": [
+        {
+            "nombre": "Salón Mesa Real",
+            "categoria": "emprendimientos",
+            "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
+            "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
+            "imagen": "assets/tarjetas/1001185799_6a88a00f6d368.webp",
+            "imagen_w": 675,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Consulta Aquí más sobre Salón Mesa Real",
+                    "telefono": "5493758545119",
+                    "mensaje": "Hola, vengo de la cartelera de apóstoles"
+                }
+            ],
+            "destacado": true
+        },
         {
             "nombre": "Wolhein Gabriel",
             "categoria": "cvs",
