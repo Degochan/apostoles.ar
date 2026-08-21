@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-21T22:16:19+00:00",
+    "updated_at": "2026-08-21T22:17:58+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
@@ -31,6 +31,40 @@
                     "nombre": "Apriete aquí para comunicarte con el Estudio Spinanto",
                     "telefono": "3758483857",
                     "mensaje": "Hola, vengo desde la página de Apostoles.ar, quisiera hacer una consulta."
+                }
+            ],
+            "destacado": false
+        },
+        {
+            "nombre": "Hamburguederia MyD",
+            "categoria": "emprendimientos",
+            "descripcion": "Venta de comida rapida. Y durante el medio dia venta de comida caseras por viandas.",
+            "keywords": "hamburguederia myd venta de comida rapida. y durante el medio dia venta de comida caseras por viandas. emprendimientos",
+            "imagen": "assets/tarjetas/img_20260806_wa0036_6a88aeab71f06.webp",
+            "imagen_w": 1200,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "3764171802",
+                    "mensaje": "Hola, vi tu tarjeta en la página de Apostoles.ar y quiero hacer un pedido."
+                }
+            ],
+            "destacado": false
+        },
+        {
+            "nombre": "Ve Deco & Eventos 🎈",
+            "categoria": "profesionales",
+            "descripcion": "✨ Somos VE Deco & Eventos 🎈\r\n\r\n Decoraciones para eventos en general.\r\nAlquiler de puffs y Mobiliario.\r\n\r\n📆 Consultanos por tu fecha\r\n3758552603",
+            "keywords": "ve deco & eventos ? ? somos ve deco & eventos ? decoraciones para eventos en general. alquiler de puffs y mobiliario. ? consultanos por tu fecha 3758552603 profesionales",
+            "imagen": "assets/tarjetas/img_9245_6a88ad6910a1e.webp",
+            "imagen_w": 1200,
+            "imagen_h": 800,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "3758552603",
+                    "mensaje": "Hola Ve Deco & Eventos 🎈! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
                 }
             ],
             "destacado": false
