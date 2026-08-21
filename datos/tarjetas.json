@@ -1,23 +1,6 @@
 {
-    "updated_at": "2026-08-21T00:36:51-03:00",
+    "updated_at": "2026-08-21T00:37:52-03:00",
     "tarjetas": [
-        {
-            "nombre": "Test Pueba",
-            "categoria": "empresas",
-            "descripcion": "Esta es una empresa de prueba.",
-            "keywords": "test prueba",
-            "imagen": "assets/tarjetas/54_9_3758_458565_1_6a87c7b8b7c08.webp",
-            "imagen_w": 675,
-            "imagen_h": 1200,
-            "contactos": [
-                {
-                    "nombre": "Diego",
-                    "telefono": "5493764521746",
-                    "mensaje": "Hola esta es una prueba desde La app de Apostoles"
-                }
-            ],
-            "destacado": true
-        },
         {
             "nombre": "Aberturas METALUM",
             "categoria": "empresas",
@@ -308,6 +291,23 @@
                     "nombre": "",
                     "telefono": "5493743542289",
                     "mensaje": "Hola! Vi tu tarjeta de Somer Celulares en ITe Apóstoles y quería consultar por una reparación."
+                }
+            ],
+            "destacado": false
+        },
+        {
+            "nombre": "Test Pueba",
+            "categoria": "empresas",
+            "descripcion": "Esta es una empresa de prueba.",
+            "keywords": "test prueba",
+            "imagen": "assets/tarjetas/54_9_3758_458565_1_6a87c7b8b7c08.webp",
+            "imagen_w": 675,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Diego",
+                    "telefono": "5493764521746",
+                    "mensaje": "Hola esta es una prueba desde La app de Apostoles"
                 }
             ],
             "destacado": false
