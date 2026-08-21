@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-21T17:02:43+00:00",
+    "updated_at": "2026-08-21T17:03:38+00:00",
     "tarjetas": [
         {
             "nombre": "Wolhein Gabriel",
@@ -14,6 +14,23 @@
                     "nombre": "",
                     "telefono": "5493743454291",
                     "mensaje": "Hola Gabriel! Vi tu CV en ITe Apóstoles y quería consultarte."
+                }
+            ],
+            "destacado": false
+        },
+        {
+            "nombre": "Zapateria lo artesanal",
+            "categoria": "profesionales",
+            "descripcion": "Arreglos de calzados, talabarteria y tapiceria.",
+            "keywords": "zapateria lo artesanal arreglos de calzados, talabarteria y tapiceria. profesionales",
+            "imagen": "assets/tarjetas/img_20260819_wa0051_6a88822042bbf.webp",
+            "imagen_w": 1200,
+            "imagen_h": 800,
+            "contactos": [
+                {
+                    "nombre": "Pity55",
+                    "telefono": "3758459159",
+                    "mensaje": "Hola Zapateria lo artesanal! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
                 }
             ],
             "destacado": false
