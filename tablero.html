@@ -34,10 +34,14 @@
       {
         "@type": "ListItem",
         "position": 1,
+        "name": "asdasdad",
+        "description": "asdad asd asd asd asd"      },      {
+        "@type": "ListItem",
+        "position": 2,
         "name": "Test Pueba",
         "description": "Esta es una empresa de prueba."      },      {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "name": "Wolhein Gabriel",
         "description": "Desarrollador de Soluciones y automatizaciones con experiencia en an\u00e1lisis, dise\u00f1o y puesta en marcha de sistemas inform\u00e1ticos y automatizaciones para empresas."      }    ]
   }
@@ -656,7 +660,10 @@
       <div class="filters-row" role="group" aria-label="Filtrar por categoría">
         <span class="filter-label">Filtrar por:</span>
         <button class="btn-filter active" data-category="todos" aria-pressed="true">
-          Todos <span class="filter-count">2</span>
+          Todos <span class="filter-count">3</span>
+        </button>
+        <button class="btn-filter" data-category="emprendimientos" aria-pressed="false">
+          Emprendimientos <span class="filter-count">1</span>
         </button>
         <button class="btn-filter" data-category="empresas" aria-pressed="false">
           Empresas <span class="filter-count">1</span>
@@ -670,6 +677,21 @@
 
     <!-- Grid del Tablero -->
     <div class="tablero-grid" id="tablero-grid">
+      <div class="tarjeta-card tarjeta-destacada" data-category="emprendimientos"
+        data-keywords="asdasdad asdad asd asd asd asd emprendimientos">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/swiss_zoo_intel_6a887a2fa1d7e.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/swiss_zoo_intel_6a887a2fa1d7e.webp" width="750" height="500" alt="asdasdad — Emprendimientos en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">asdasdad<span class="tarjeta-destacada-badge">★ Destacada</span></h3>
+          <p class="tarjeta-desc">
+            asdad asd asd asd asd          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493764521746?text=asdasd+asd+asd+asd">
+            📲 Diegorcho          </a>
+        </div>
+      </div>
       <div class="tarjeta-card" data-category="empresas"
         data-keywords="test prueba">
         <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/54_9_3758_458565_1_6a87c7b8b7c08.webp&quot;)">
