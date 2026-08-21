@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-21T23:02:29+00:00",
+    "updated_at": "2026-08-21T23:03:47+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
@@ -71,7 +71,7 @@
         },
         {
             "nombre": "Ve Deco & Eventos 🎈",
-            "categoria": "profesionales",
+            "categoria": "oficios",
             "descripcion": "✨ Somos VE Deco & Eventos 🎈\r\n\r\n Decoraciones para eventos en general.\r\nAlquiler de puffs y Mobiliario.\r\n\r\n📆 Consultanos por tu fecha\r\n3758552603",
             "keywords": "ve deco & eventos ? ? somos ve deco & eventos ? decoraciones para eventos en general. alquiler de puffs y mobiliario. ? consultanos por tu fecha 3758552603 profesionales",
             "imagen": "assets/tarjetas/img_9245_6a88ad6910a1e.webp",
@@ -105,7 +105,7 @@
         },
         {
             "nombre": "Zapateria lo artesanal",
-            "categoria": "profesionales",
+            "categoria": "oficios",
             "descripcion": "Arreglos de calzados, talabarteria y tapiceria.",
             "keywords": "zapateria lo artesanal arreglos de calzados, talabarteria y tapiceria. profesionales",
             "imagen": "assets/tarjetas/img_20260819_wa0051_6a88822042bbf.webp",
