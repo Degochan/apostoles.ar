@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-21T19:12:11+00:00",
+    "updated_at": "2026-08-21T22:14:39+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
@@ -17,6 +17,23 @@
                 }
             ],
             "destacado": true
+        },
+        {
+            "nombre": "ESTUDIO CONTABLE SPINNATO LUCAS",
+            "categoria": "profesionales",
+            "descripcion": "Cr. Spinnato Lucas, M.P 3279. Direccion Bernardo Houssay 28, Apóstoles Misiones. Experto en constitucion de Sociedades, experto Universitario en Mercados de Capitales, realizamos Altas de Monotributo, Responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. Consultoria profesional para Pymes.",
+            "keywords": "estudio contable spinnato lucas cr. spinnato lucas, m.p 3279. direccion bernardo houssay 28, apostoles misiones. experto en constitucion de sociedades, experto universitario en mercados de capitales, realizamos altas de monotributo, responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. consultoria profesional para pymes. profesionales",
+            "imagen": "assets/tarjetas/logo_estudio_pdf_6a88bd948e696.webp",
+            "imagen_w": 1200,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Apriete aquí para comunicarte con el Estudio Spinanto",
+                    "telefono": "3758483857",
+                    "mensaje": "Hola, vengo desde la página de Apostoles.ar, quisiera hacer una consulta."
+                }
+            ],
+            "destacado": false
         },
         {
             "nombre": "Wolhein Gabriel",
