@@ -1,13 +1,13 @@
 {
-    "updated_at": "2026-08-21T22:18:23+00:00",
+    "updated_at": "2026-08-21T22:49:59+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
             "categoria": "emprendimientos",
             "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
             "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
-            "imagen": "assets/tarjetas/1001185799_6a88a00f6d368.webp",
-            "imagen_w": 675,
+            "imagen": "assets/tarjetas/reunion_2_6a88d60edeb1d.webp",
+            "imagen_w": 960,
             "imagen_h": 1200,
             "contactos": [
                 {
@@ -23,8 +23,8 @@
             "categoria": "profesionales",
             "descripcion": "Cr. Spinnato Lucas, M.P 3279. Direccion Bernardo Houssay 28, Apóstoles Misiones. Experto en constitucion de Sociedades, experto Universitario en Mercados de Capitales, realizamos Altas de Monotributo, Responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. Consultoria profesional para Pymes.",
             "keywords": "estudio contable spinnato lucas cr. spinnato lucas, m.p 3279. direccion bernardo houssay 28, apostoles misiones. experto en constitucion de sociedades, experto universitario en mercados de capitales, realizamos altas de monotributo, responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. consultoria profesional para pymes. profesionales",
-            "imagen": "assets/tarjetas/logo_estudio_pdf_6a88bd948e696.webp",
-            "imagen_w": 1200,
+            "imagen": "assets/tarjetas/reunion_4_6a88d60045424.webp",
+            "imagen_w": 960,
             "imagen_h": 1200,
             "contactos": [
                 {
