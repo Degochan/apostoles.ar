@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-21T22:49:59+00:00",
+    "updated_at": "2026-08-21T22:54:17+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
@@ -31,6 +31,23 @@
                     "nombre": "Apriete aquí para comunicarte con el Estudio Spinanto",
                     "telefono": "3758483857",
                     "mensaje": "Hola, vengo desde la página de Apostoles.ar, quisiera hacer una consulta."
+                }
+            ],
+            "destacado": false
+        },
+        {
+            "nombre": "Fiambrería Rodri",
+            "categoria": "emprendimientos",
+            "descripcion": "Avda. Julián Zubreski 241. Venta de Fiambres, Bebidas Frías, Comestibles en General y Mucho Más.\r\nLos esperamos con la mejor atención.",
+            "keywords": "fiambreria rodri avda. julian zubreski 241. venta de fiambres, bebidas frias, comestibles en general y mucho mas. los esperamos con la mejor atencion. emprendimientos",
+            "imagen": "assets/tarjetas/1001305272_6a88d3c0022c9.webp",
+            "imagen_w": 834,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Aprieta aquí para Consultar",
+                    "telefono": "3758499310",
+                    "mensaje": "Hola, vengo de la página Apostoles.ar"
                 }
             ],
             "destacado": false
