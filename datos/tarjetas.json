@@ -1,6 +1,23 @@
 {
-    "updated_at": "2026-08-21T16:20:16+00:00",
+    "updated_at": "2026-08-21T16:21:19+00:00",
     "tarjetas": [
+        {
+            "nombre": "asdasdad",
+            "categoria": "emprendimientos",
+            "descripcion": "asdad asd asd asd asd",
+            "keywords": "asdasdad asdad asd asd asd asd emprendimientos",
+            "imagen": "assets/tarjetas/swiss_zoo_intel_6a887a2fa1d7e.webp",
+            "imagen_w": 750,
+            "imagen_h": 500,
+            "contactos": [
+                {
+                    "nombre": "Diegorcho",
+                    "telefono": "5493764521746",
+                    "mensaje": "asdasd asd asd asd"
+                }
+            ],
+            "destacado": true
+        },
         {
             "nombre": "Test Pueba",
             "categoria": "empresas",
