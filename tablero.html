@@ -557,6 +557,59 @@
       opacity: 1;
     }
 
+    /* ── Modal Formulario ─────────────────────────────────── */
+    .form-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.72);
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .form-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .form-modal-dialog {
+      position: relative;
+      width: min(680px, 100%);
+      height: min(88vh, 900px);
+      background: #fdfdfd;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.4);
+    }
+    .form-modal-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .form-modal-close {
+      position: absolute;
+      top: .6rem;
+      right: .7rem;
+      z-index: 2;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: none;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.75);
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .form-modal-close:hover {
+      background: var(--purple-dark);
+    }
+
     /* ── Lightbox Modal ────────────────────────────────────── */
     .lightbox {
       position: fixed;
@@ -999,15 +1052,23 @@
       <p>
         Publicá tu flyer o perfil en la cartelera de forma totalmente gratuita y recibí consultas directas en tu WhatsApp de vecinos y empresas de la zona.
       </p>
-      <a class="btn-sumar" href="https://lafragata.net/apostoles/solicitar.php">
+      <button class="btn-sumar" type="button" id="btn-sumar-modal">
         📲 Sumar mi Tarjeta Gratis
-      </a>
+      </button>
       <a class="sumar-wa-alt" href="https://wa.me/5493743454291?text=Hola!%20Quiero%20sumar%20mi%20tarjeta%20en%20el%20Tablero%20de%20Ap%C3%B3stoles" target="_blank" rel="noopener">
         ¿Preferís WhatsApp? Escribinos →
       </a>
     </div>
 
   </main>
+
+  <!-- ── Modal Formulario (iframe embebido, URL no compartible) ── -->
+  <div class="form-modal" id="form-modal" hidden>
+    <div class="form-modal-dialog" role="dialog" aria-modal="true" aria-label="Formulario para sumar tu tarjeta">
+      <button class="form-modal-close" id="form-modal-close" type="button" aria-label="Cerrar formulario">✕</button>
+      <iframe class="form-modal-frame" id="form-modal-frame" title="Sumar mi tarjeta a la cartelera" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
 
   <!-- ── Lightbox Modal ────────────────────────────────────── -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
@@ -1148,6 +1209,36 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         closeLightboxDirect();
+      }
+    });
+
+    // ── Modal Formulario (iframe embebido) ──────────────────────
+    const formModal = document.getElementById('form-modal');
+    const formFrame = document.getElementById('form-modal-frame');
+    const formUrl = "https:\/\/lafragata.net\/apostoles\/solicitar.php";
+
+    function openFormModal() {
+      if (!formFrame.src) formFrame.src = formUrl + (formUrl.includes('?') ? '&' : '?') + 'embed=1';
+      formModal.hidden = false;
+      requestAnimationFrame(() => formModal.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+      document.getElementById('form-modal-close').focus();
+    }
+
+    function closeFormModal() {
+      formModal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { formModal.hidden = true; }, 250);
+    }
+
+    document.getElementById('btn-sumar-modal').addEventListener('click', openFormModal);
+    document.getElementById('form-modal-close').addEventListener('click', closeFormModal);
+    formModal.addEventListener('click', (e) => {
+      if (e.target === formModal) closeFormModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && formModal.classList.contains('open')) {
+        closeFormModal();
       }
     });
   </script>
