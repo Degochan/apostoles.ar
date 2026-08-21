@@ -139,15 +139,17 @@ Desde 2026 el tablero se administra **sin editar archivos ni usar git**: todo se
 1. Entrar a `https://lafragata.net/admin/` → sección **🧉 Apóstoles** (solo administradores completos).
 2. Alta/edición de tarjetas en **Tarjetas** (con imagen: se convierte sola a WebP ≤1200px; multi-contacto WhatsApp), más pausar/destacar/ordenar/baja lógica.
 3. Botón **Publicar**: el sistema genera el tablero (HTML server-side para SEO) y lo sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
-4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`) desde el admin.
+4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`, `notify_email`, `form_url`) desde el admin.
 
-Durante las pruebas el sistema publica en `tablero2.html` de un repo de prueba; al pasar a producción publica directamente `tablero.html` en este repo (configurando `GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata).
+La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata) y el archivo generado es `tablero.html`.
+
+**Solicitudes públicas (2026-08):** el botón **"Sumar mi Tarjeta Gratis"** del tablero abre el formulario `https://lafragata.net/apostoles/solicitar.php` (link secundario a WhatsApp incluido). El vecino carga sus datos; llega un email al admin y la solicitud aparece en **📨 Solicitudes** del panel con badge de pendientes. Al aprobar se crea la tarjeta pausada para revisar, activar y publicar. Nada se publica sin aprobación; el formulario tiene anti-spam (honeypot, time-trap, rate-limit) y las imágenes se re-codifican a WebP.
 
 **Archivos de este repo que pasa a generar el sistema** (no editarlos más a mano una vez en producción):
 
 - `assets/tarjetas/` — imágenes de tarjetas nuevas (WebP ≤1200px).
 - `datos/tarjetas.json` — datos de todas las tarjetas activas.
-- `tablero2.html` / `tablero.html` — el tablero completo.
+- `tablero.html` — el tablero completo.
 - `sitemap.xml` — con `lastmod` actualizado en cada publicación.
 
 Los archivos que **siguen siendo manuales**: `index.html`, `assets/style.css`, `assets/app.js`, `robots.txt`, `llms.txt`, `CNAME`, `.nojekyll`. El manual completo del admin está en `docs/MANUAL_APOSTOLES_ADMIN.md` del proyecto lafragata.net.
