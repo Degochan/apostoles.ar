@@ -1,6 +1,6 @@
 /* ── Configuración compartida ITe Apóstoles ─────────────────────────── */
 const WA_BOT = '5493743434312'; // Bot de turnos / trámites
-const WA_ADMIN = '5493743454291'; // Superadmin / sumar tarjetas
+const WA_ADMIN = '5493758458565'; // Superadmin / sumar tarjetas
 
 /* ── Utilidades WhatsApp ──────────────────────────────────── */
 function _abrirWA(numero, texto) {
