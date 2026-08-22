@@ -1,15 +1,15 @@
 {
-    "updated_at": "2026-08-22T16:48:05+00:00",
+    "updated_at": "2026-08-22T16:59:46+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
-            "slug": null,
+            "slug": "mesa-real",
             "categoria": "emprendimientos",
             "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
             "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
-            "imagen": "assets/tarjetas/reunion_2_6a88d60edeb1d.webp",
-            "imagen_w": 960,
-            "imagen_h": 1200,
+            "imagen": "assets/tarjetas/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp",
+            "imagen_w": 928,
+            "imagen_h": 1152,
             "contactos": [
                 {
                     "nombre": "Consulta Aquí más sobre Salón Mesa Real",
