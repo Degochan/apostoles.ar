@@ -237,6 +237,101 @@
       font-weight: 600;
     }
 
+    /* ── Banda de destacadas vigentes ──────────────────────── */
+    .destacadas-section {
+      margin: 0 0 2.5rem;
+    }
+
+    .destacadas-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: .9rem;
+    }
+
+    .destacadas-heading h2 {
+      color: #111827;
+      font-size: clamp(1.25rem, 3vw, 1.55rem);
+      margin: 0;
+    }
+
+    .destacadas-heading p {
+      color: var(--muted);
+      font-size: .84rem;
+      margin: 0;
+    }
+
+    .destacadas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 1rem;
+    }
+
+    .destacada-featured-card {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      min-height: 96px;
+      padding: .8rem;
+      color: inherit;
+      text-decoration: none;
+      background: linear-gradient(135deg, #fff 0%, #faf5ff 100%);
+      border: 1px solid #d8b4fe;
+      border-left: 4px solid var(--purple);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(124, 53, 239, .1);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .destacada-featured-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--purple);
+      box-shadow: 0 8px 20px rgba(124, 53, 239, .18);
+    }
+
+    .destacada-featured-card img {
+      width: 92px;
+      height: 72px;
+      flex: 0 0 92px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #f3f4f6;
+    }
+
+    .destacada-featured-copy {
+      min-width: 0;
+    }
+
+    .destacada-featured-copy small {
+      display: block;
+      margin-bottom: .2rem;
+      color: var(--purple);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .destacada-featured-copy strong {
+      display: block;
+      overflow: hidden;
+      color: #111827;
+      font-size: .98rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .destacada-featured-copy span {
+      display: block;
+      overflow: hidden;
+      margin-top: .2rem;
+      color: var(--muted);
+      font-size: .78rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     /* ── Grid del Tablero (más respirada) ───────────────────── */
     .tablero-grid {
       display: grid;
@@ -688,6 +783,9 @@
       .result-count { margin-left: 0; width: 100%; }
       .tablero-grid { gap: 1.25rem; margin-bottom: 2.5rem; }
       .sumar-tarjeta-box { padding: 2rem 1.25rem; }
+      .destacadas-heading { display: block; }
+      .destacadas-heading p { margin-top: .25rem; }
+      .destacadas-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -723,6 +821,24 @@
 
   <!-- ── Contenido Principal ─────────────────────────────────── -->
   <main class="container">
+
+    <!-- Destacadas vigentes: se ocultan al buscar o filtrar para no duplicar resultados. -->
+    <section class="destacadas-section" id="destacadas-section" aria-labelledby="destacadas-title">
+      <div class="destacadas-heading">
+        <h2 id="destacadas-title">⭐ Destacados de la semana</h2>
+        <p>Conocé primero estas propuestas locales.</p>
+      </div>
+      <div class="destacadas-grid">
+        <a class="destacada-featured-card" href="#t-mesa-real">
+          <img src="assets/tarjetas/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp" width="92" height="72" alt="Salón Mesa Real — Emprendimientos en Apóstoles">
+          <span class="destacada-featured-copy">
+            <small>★ Emprendimientos</small>
+            <strong>Salón Mesa Real</strong>
+            <span>Ver tarjeta completa →</span>
+          </span>
+        </a>
+      </div>
+    </section>
 
     <!-- Buscador y Filtros -->
     <div class="search-filter-box">
@@ -944,6 +1060,7 @@ Alquiler de puffs y Mobiliario.
     const noResults = document.getElementById('no-results');
     const resultCount = document.getElementById('result-count');
     const btnClearFilters = document.getElementById('btn-clear-filters');
+    const featuredSection = document.getElementById('destacadas-section');
 
     let currentCategory = 'todos';
     let currentSearchTerm = '';
@@ -958,6 +1075,10 @@ Alquiler de puffs y Mobiliario.
     function filterCards() {
       let visibleCount = 0;
       const normalizedSearch = normalizeText(currentSearchTerm.trim());
+
+      if (featuredSection) {
+        featuredSection.hidden = currentCategory !== 'todos' || normalizedSearch !== '';
+      }
 
       cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
