@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero de Tarjetas — ITe Apóstoles</title>
+  <meta name="description" content="Cartelera digital y directorio de emprendimientos, profesionales, servicios, oficios y CVs de Apóstoles, Misiones. Contacto directo por WhatsApp.">
+
+  <meta property="og:title" content="Tablero de Tarjetas — ITe Apóstoles">
+  <meta property="og:description" content="Cartelera digital y directorio de emprendimientos, profesionales, servicios, oficios y CVs de Apóstoles, Misiones. Contacto directo por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apostoles.ar/tablero.html">
+  <meta property="og:site_name" content="ITe Apóstoles">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:image" content="https://apostoles.ar/assets/tarjetas/og_apostoles.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tablero de Tarjetas — ITe Apóstoles">
+  <meta name="twitter:description" content="Cartelera digital de servicios, comercios, fletes y profesionales en Apóstoles, Misiones.">
+  <meta name="twitter:image" content="https://apostoles.ar/assets/tarjetas/og_apostoles.png">
+  <link rel="canonical" href="https://apostoles.ar/tablero.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧉</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Cartelera Digital de Emprendimientos y Servicios de Apóstoles",
+    "url": "https:\/\/apostoles.ar\/tablero.html",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Sal\u00f3n Mesa Real",
+        "description": "Sal\u00f3n de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces R\u00edtmicas, M\u00e1quina de Humo, Mesas, Sillas, Zona de Cocina y m\u00e1s. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversi\u00f3n para Chicos y Grandes"      },      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ESTUDIO CONTABLE SPINNATO LUCAS",
+        "description": "Cr. Spinnato Lucas, M.P 3279. Direccion Bernardo Houssay 28, Ap\u00f3stoles Misiones. Experto en constitucion de Sociedades, experto Universitario en Mercados de Capitales, realizamos Altas de Monotributo, Responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. Consultoria profesional para Pymes."      },      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fiambrer\u00eda Rodri",
+        "description": "Avda. Juli\u00e1n Zubreski 241. Venta de Fiambres, Bebidas Fr\u00edas, Comestibles en General y Mucho M\u00e1s.\r\nLos esperamos con la mejor atenci\u00f3n."      },      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Hamburguederia MyD",
+        "description": "Venta de comida rapida. Y durante el medio dia venta de comida caseras por viandas."      },      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Ve Deco & Eventos \ud83c\udf88",
+        "description": "\u2728 Somos VE Deco & Eventos \ud83c\udf88\r\n\r\n Decoraciones para eventos en general.\r\nAlquiler de puffs y Mobiliario.\r\n\r\n\ud83d\udcc6 Consultanos por tu fecha\r\n3758552603"      },      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Wolhein Gabriel",
+        "description": "Desarrollador de Soluciones y automatizaciones con experiencia en an\u00e1lisis, dise\u00f1o y puesta en marcha de sistemas inform\u00e1ticos y automatizaciones para empresas."      },      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Zapateria lo artesanal",
+        "description": "Arreglos de calzados, talabarteria y tapiceria."      }    ]
+  }
+  </script>
+
+  <style>
+    /* ── Overrides base (tablero) ──────────────────────────── */
+    body { background: #fdfdfd; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .btn-back {
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 600;
+      transition: color .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .btn-back:hover {
+      color: var(--purple);
+    }
+
+    /* ── Accesibilidad: focus visible ──────────────────────── */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--purple);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* ── Header Sección ────────────────────────────────────── */
+    .header-section {
+      text-align: center;
+      padding: 3rem 0 2rem 0;
+      background: linear-gradient(180deg, var(--purple-light) 0%, rgba(253, 253, 253, 1) 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: .3rem .8rem;
+      border-radius: 99px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-purple {
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      border: 1px solid #ddd6fe;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: .6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── Buscador y Filtros ─────────────────────────────────── */
+    .search-filter-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+    }
+
+    .search-row {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(124, 53, 239, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+      font-size: 1.1rem;
+    }
+
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-right: .5rem;
+    }
+
+    .btn-filter {
+      background: #f3f4f6;
+      border: 1px solid transparent;
+      color: var(--text);
+      padding: .45rem 1rem;
+      border-radius: 99px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .btn-filter:hover {
+      background: #e5e7eb;
+    }
+
+    .btn-filter.active {
+      background: var(--purple);
+      color: #fff;
+    }
+
+    .filter-count {
+      background: rgba(124, 53, 239, 0.12);
+      color: var(--purple-dark);
+      font-size: .72rem;
+      font-weight: 700;
+      border-radius: 99px;
+      padding: .05rem .45rem;
+      min-width: 1.3em;
+      text-align: center;
+    }
+
+    .btn-filter.active .filter-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .result-count {
+      margin-left: auto;
+      font-size: .84rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ── Grid del Tablero (más respirada) ───────────────────── */
+    .tablero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .tarjeta-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tarjeta-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--purple-mid);
+    }
+
+    /* ── Tarjeta destacada: banda/borde morado ──────────────── */
+    .tarjeta-card.tarjeta-destacada {
+      border: 2px solid var(--purple);
+      box-shadow: 0 6px 20px rgba(124, 53, 239, 0.18);
+    }
+
+    .tarjeta-destacada .tarjeta-img-container {
+      border-bottom: 4px solid var(--purple);
+    }
+
+    .tarjeta-destacada .tarjeta-title {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+    }
+
+    .tarjeta-destacada-badge {
+      font-size: .62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #fff;
+      background: var(--purple);
+      border-radius: 99px;
+      padding: .1rem .5rem;
+    }
+
+    .tarjeta-img-container {
+      position: relative;
+      background: #f3f4f6;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .tarjeta-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .3s;
+    }
+
+    .tarjeta-card:hover .tarjeta-img {
+      transform: scale(1.03);
+    }
+
+    .tarjeta-zoom-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .2s;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      gap: 0.35rem;
+    }
+
+    .tarjeta-img-container:hover .tarjeta-zoom-overlay {
+      opacity: 1;
+    }
+
+    .tarjeta-info {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .tarjeta-cat-badge {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--purple);
+      background: var(--purple-light);
+      padding: .15rem .5rem;
+      border-radius: 99px;
+      width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: .5rem;
+    }
+
+    .tarjeta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: .4rem;
+    }
+
+    .tarjeta-desc {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .btn-wa-contact {
+      background: var(--green-wa);
+      color: #fff;
+      padding: .65rem;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      transition: background .2s, transform .1s;
+      width: 100%;
+    }
+
+    .btn-wa-contact:hover {
+      background: var(--green-wa-dk);
+    }
+
+    .btn-wa-contact:active {
+      transform: scale(0.98);
+    }
+
+    /* ── Mensaje de no resultados (estado vacío mejorado) ───── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      background: #fff;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      display: none;
+    }
+
+    /* ── Iconos sociales + compartir ─────────────────────────── */
+    .tarjeta-socials {
+      display: flex;
+      gap: .4rem;
+      margin-bottom: 1rem;
+    }
+    .tarjeta-socials a {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 8px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .tarjeta-socials a:hover {
+      background: var(--purple-light);
+      transform: translateY(-2px);
+    }
+    .btn-share {
+      background: #fff;
+      border: 1.5px solid var(--green-wa);
+      color: var(--green-wa-dk);
+      padding: .65rem .8rem;
+      flex: 0 0 auto;
+    }
+    .btn-share:hover {
+      background: var(--purple-light);
+      border-color: var(--purple);
+      color: var(--purple-dark);
+    }
+
+    /* ── Resaltado de tarjeta propia (?t=slug) ───────────────── */
+    .tarjeta-propia {
+      outline: 4px solid var(--green-wa);
+      outline-offset: 3px;
+      animation: tarjetaPropiaPulse 1.6s ease-in-out 2;
+    }
+    @keyframes tarjetaPropiaPulse {
+      0%, 100% { outline-color: var(--green-wa); }
+      50% { outline-color: var(--purple); }
+    }
+
+
+    .no-results.show {
+      display: block;
+    }
+
+    .no-results-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .no-results h3 {
+      color: #111827;
+      font-size: 1.15rem;
+      margin-bottom: .4rem;
+    }
+
+    .no-results p {
+      font-size: .92rem;
+    }
+
+    .no-results .btn-clear {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1rem;
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      font-weight: 700;
+      font-size: .88rem;
+      border: 1px solid #ddd6fe;
+      border-radius: 8px;
+      padding: .6rem 1.2rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .no-results .btn-clear:hover {
+      background: #ede9fe;
+    }
+
+    /* ── Banner Sumar Tarjeta ────────────────────────────────── */
+    .sumar-tarjeta-box {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sumar-tarjeta-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sumar-tarjeta-box h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+
+    .sumar-tarjeta-box p {
+      font-size: .95rem;
+      max-width: 580px;
+      margin: 0 auto 1.5rem;
+      opacity: .9;
+    }
+
+    .btn-sumar {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green-wa);
+      color: #fff;
+      padding: .85rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(22, 152, 83, 0.3);
+      transition: background .2s, transform .15s;
+      /* El ::before del banner es un overlay absoluto que pinta encima;
+         posicionar el botón lo sube a su propia capa clickeable. */
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-sumar:hover {
+      background: var(--green-wa-dk);
+      transform: translateY(-2px);
+    }
+
+    .sumar-wa-alt {
+      display: inline-block;
+      margin-top: .9rem;
+      font-size: .8rem;
+      opacity: .85;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sumar-wa-alt:hover {
+      opacity: 1;
+    }
+
+    /* ── Modal Formulario ─────────────────────────────────── */
+    .form-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.72);
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .form-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .form-modal-dialog {
+      position: relative;
+      width: min(680px, 100%);
+      height: min(88vh, 900px);
+      background: #fdfdfd;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.4);
+    }
+    .form-modal-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .form-modal-close {
+      position: absolute;
+      top: .6rem;
+      right: .7rem;
+      z-index: 2;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: none;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.75);
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .form-modal-close:hover {
+      background: var(--purple-dark);
+    }
+
+    /* ── Lightbox Modal ────────────────────────────────────── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      padding: 1.5rem;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid #fff;
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+    }
+
+    .lightbox.active .lightbox-img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--purple-light);
+    }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .header-section { padding: 2.25rem 0 1.5rem 0; }
+      .search-filter-box { padding: 1rem; margin-bottom: 1.75rem; }
+      .result-count { margin-left: 0; width: 100%; }
+      .tablero-grid { gap: 1.25rem; margin-bottom: 2.5rem; }
+      .sumar-tarjeta-box { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navbar ───────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 30px; width: 30px; object-fit: contain;">
+        ITe Apóstoles
+      </a>
+      <a class="btn-back" href="index.html">
+        ← Volver al inicio
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── Header Sección ────────────────────────────────────── -->
+  <header class="header-section">
+    <div class="container">
+      <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles, Misiones" style="height: 75px; width: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));">
+      </div>
+      <span class="badge badge-purple">📍 APÓSTOLES, MISIONES</span>
+      <h1>Cartelera de Emprendimientos, Profesionales y CVs</h1>
+      <p class="subtitle">
+        Encontrá servicios locales, oficios, profesionales autónomos y CVs de postulantes. Ampliá las tarjetas para ver más detalles y contactalos directamente por WhatsApp.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Contenido Principal ─────────────────────────────────── -->
+  <main class="container">
+
+    <!-- Buscador y Filtros -->
+    <div class="search-filter-box">
+      <div class="search-row">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input" aria-label="Buscar tarjetas"
+          placeholder="Buscar por rubro, servicio, nombre, oficio o perfil (ej: informatica, electricista, refrigeracion, fletes)...">
+      </div>
+      <div class="filters-row" role="group" aria-label="Filtrar por categoría">
+        <span class="filter-label">Filtrar por:</span>
+        <button class="btn-filter active" data-category="todos" aria-pressed="true">
+          Todos <span class="filter-count">7</span>
+        </button>
+        <button class="btn-filter" data-category="emprendimientos" aria-pressed="false">
+          Emprendimientos <span class="filter-count">3</span>
+        </button>
+        <button class="btn-filter" data-category="oficios" aria-pressed="false">
+          Oficios <span class="filter-count">2</span>
+        </button>
+        <button class="btn-filter" data-category="profesionales" aria-pressed="false">
+          Profesionales <span class="filter-count">1</span>
+        </button>
+        <button class="btn-filter" data-category="cvs" aria-pressed="false">
+          CVs Personales <span class="filter-count">1</span>
+        </button>
+        <span class="result-count" id="result-count"></span>
+      </div>
+    </div>
+
+    <!-- Grid del Tablero -->
+    <div class="tablero-grid" id="tablero-grid">
+      <div class="tarjeta-card tarjeta-destacada" data-category="emprendimientos"
+        data-keywords="salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/reunion_2_6a88d60edeb1d.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/reunion_2_6a88d60edeb1d.webp" width="960" height="1200" alt="Salón Mesa Real — Emprendimientos en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Salón Mesa Real<span class="tarjeta-destacada-badge">★ Destacada</span></h3>
+          <p class="tarjeta-desc">
+            Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. 
+Te esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493758545119?text=Hola%2C+vengo+de+la+cartelera+de+ap%C3%B3stoles">
+            📲 Consulta Aquí más sobre Salón Mesa Real          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="profesionales"
+        data-keywords="estudio contable spinnato lucas cr. spinnato lucas, m.p 3279. direccion bernardo houssay 28, apostoles misiones. experto en constitucion de sociedades, experto universitario en mercados de capitales, realizamos altas de monotributo, responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. consultoria profesional para pymes. profesionales">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/reunion_4_6a88d60045424.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/reunion_4_6a88d60045424.webp" width="960" height="1200" alt="ESTUDIO CONTABLE SPINNATO LUCAS — Profesionales en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
+          <h3 class="tarjeta-title">ESTUDIO CONTABLE SPINNATO LUCAS</h3>
+          <p class="tarjeta-desc">
+            Cr. Spinnato Lucas, M.P 3279. Direccion Bernardo Houssay 28, Apóstoles Misiones. Experto en constitucion de Sociedades, experto Universitario en Mercados de Capitales, realizamos Altas de Monotributo, Responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. Consultoria profesional para Pymes.          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493758483857?text=Hola%2C+vengo+desde+la+p%C3%A1gina+de+Apostoles.ar%2C+quisiera+hacer+una+consulta.">
+            📲 Apriete aquí para comunicarte con el Estudio Spinanto          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="fiambreria rodri avda. julian zubreski 241. venta de fiambres, bebidas frias, comestibles en general y mucho mas. los esperamos con la mejor atencion. emprendimientos">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/1001305272_6a88d3c0022c9.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/1001305272_6a88d3c0022c9.webp" width="834" height="1200" alt="Fiambrería Rodri — Emprendimientos en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Fiambrería Rodri</h3>
+          <p class="tarjeta-desc">
+            Avda. Julián Zubreski 241. Venta de Fiambres, Bebidas Frías, Comestibles en General y Mucho Más.
+Los esperamos con la mejor atención.          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493758499310?text=Hola%2C+vengo+de+la+p%C3%A1gina+Apostoles.ar">
+            📲 Aprieta aquí para Consultar          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="emprendimientos"
+        data-keywords="hamburguederia myd venta de comida rapida. y durante el medio dia venta de comida caseras por viandas. emprendimientos">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260806_wa0036_6a88aeab71f06.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/img_20260806_wa0036_6a88aeab71f06.webp" width="1200" height="1200" alt="Hamburguederia MyD — Emprendimientos en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Emprendimientos</span>
+          <h3 class="tarjeta-title">Hamburguederia MyD</h3>
+          <p class="tarjeta-desc">
+            Venta de comida rapida. Y durante el medio dia venta de comida caseras por viandas.          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493764171802?text=Hola%2C+vi+tu+tarjeta+en+la+p%C3%A1gina+de+Apostoles.ar+y+quiero+hacer+un+pedido.">
+            📲 Enviar WhatsApp          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="oficios"
+        data-keywords="ve deco &amp; eventos ? ? somos ve deco &amp; eventos ? decoraciones para eventos en general. alquiler de puffs y mobiliario. ? consultanos por tu fecha 3758552603 profesionales">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_9245_6a88ad6910a1e.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/img_9245_6a88ad6910a1e.webp" width="1200" height="800" alt="Ve Deco &amp; Eventos 🎈 — Oficios en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Oficios</span>
+          <h3 class="tarjeta-title">Ve Deco &amp; Eventos 🎈</h3>
+          <p class="tarjeta-desc">
+            ✨ Somos VE Deco &amp; Eventos 🎈
+
+ Decoraciones para eventos en general.
+Alquiler de puffs y Mobiliario.
+
+📆 Consultanos por tu fecha
+3758552603          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493758552603?text=Hola+Ve+Deco+%26+Eventos+%F0%9F%8E%88%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
+            📲 Enviar WhatsApp          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="cvs"
+        data-keywords="wolhein gabriel cv curriculum vitae desarrollador programador sistemas informatica automatizaciones software desarrollo tecnologia apostoles misiones">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/cv_wolhein_gabriel.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/cv_wolhein_gabriel.webp" width="1024" height="1024" alt="Wolhein Gabriel — CVs Personales en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">CV / Postulante</span>
+          <h3 class="tarjeta-title">Wolhein Gabriel</h3>
+          <p class="tarjeta-desc">
+            Desarrollador de Soluciones y automatizaciones con experiencia en análisis, diseño y puesta en marcha de sistemas informáticos y automatizaciones para empresas.          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola+Gabriel%21+Vi+tu+CV+en+ITe+Ap%C3%B3stoles+y+quer%C3%ADa+consultarte.">
+            📲 Enviar WhatsApp          </a>
+        </div>
+      </div>
+      <div class="tarjeta-card" data-category="oficios"
+        data-keywords="zapateria lo artesanal arreglos de calzados, talabarteria y tapiceria. profesionales">
+        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260819_wa0051_6a88822042bbf.webp&quot;)">
+          <img class="tarjeta-img" src="assets/tarjetas/img_20260819_wa0051_6a88822042bbf.webp" width="1200" height="800" alt="Zapateria lo artesanal — Oficios en Apóstoles" loading="lazy">
+          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="tarjeta-cat-badge">Oficios</span>
+          <h3 class="tarjeta-title">Zapateria lo artesanal</h3>
+          <p class="tarjeta-desc">
+            Arreglos de calzados, talabarteria y tapiceria.          </p>
+          <a class="btn-wa-contact" href="https://wa.me/5493758459159?text=Hola+Zapateria+lo+artesanal%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
+            📲 Pity55          </a>
+        </div>
+      </div>
+
+      <!-- Mensaje cuando no hay resultados de búsqueda -->
+      <div class="no-results" id="no-results">
+        <div class="no-results-icon">🔎</div>
+        <h3>No encontramos resultados para tu búsqueda</h3>
+        <p>Probá con otros términos o seleccioná "Todos" en las categorías superiores.</p>
+        <button class="btn-clear" id="btn-clear-filters" type="button">✕ Limpiar búsqueda y filtros</button>
+      </div>
+
+    </div>
+
+    <!-- Banner Sumar Tarjeta -->
+    <div class="sumar-tarjeta-box">
+      <h2>¿Tenés un comercio, prestás un servicio o buscás trabajo en Apóstoles?</h2>
+      <p>
+        Publicá tu flyer o perfil en la cartelera de forma totalmente gratuita y recibí consultas directas en tu WhatsApp de vecinos y empresas de la zona.
+      </p>
+      <button class="btn-sumar" type="button" id="btn-sumar-modal">
+        📲 Sumar mi Tarjeta Gratis
+      </button>
+      <a class="sumar-wa-alt" href="https://wa.me/5493758458565?text=Hola!%20Quiero%20sumar%20mi%20tarjeta%20en%20el%20Tablero%20de%20Apostoles.ar" target="_blank" rel="noopener">
+        ¿Preferís WhatsApp? Escribinos →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── Modal Formulario (iframe embebido, URL no compartible) ── -->
+  <div class="form-modal" id="form-modal" hidden>
+    <div class="form-modal-dialog" role="dialog" aria-modal="true" aria-label="Formulario para sumar tu tarjeta">
+      <button class="form-modal-close" id="form-modal-close" type="button" aria-label="Cerrar formulario">✕</button>
+      <iframe class="form-modal-frame" id="form-modal-frame" title="Sumar mi tarjeta a la cartelera" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <!-- ── Lightbox Modal ────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxDirect()" aria-label="Cerrar imagen ampliada">✕</button>
+      <img src="" alt="Tarjeta Ampliada" class="lightbox-img" id="lightbox-img">
+    </div>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 24px; width: 24px; object-fit: contain;">
+        ITe Apóstoles — Cartelera Digital
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="tablero.html">Cartelera</a>
+        <a href="index.html#telefonos-utiles">Teléfonos útiles</a>
+        <a href="https://www.apostoles.gob.ar" target="_blank" rel="noopener">Municipalidad</a>
+      </div>
+      <p style="width: 100%; font-size: 0.8rem; color: #64748b; margin-top: 1rem; text-align: center;">
+        © 2026 ITe Apóstoles · Capital Nacional e Internacional de la Yerba Mate · Misiones, Argentina.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    // ── Lógica de Buscador y Filtros de Categoría ──────────────
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const cards = document.querySelectorAll('.tarjeta-card');
+    const noResults = document.getElementById('no-results');
+    const resultCount = document.getElementById('result-count');
+    const btnClearFilters = document.getElementById('btn-clear-filters');
+
+    let currentCategory = 'todos';
+    let currentSearchTerm = '';
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function filterCards() {
+      let visibleCount = 0;
+      const normalizedSearch = normalizeText(currentSearchTerm.trim());
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardKeywords = normalizeText(card.getAttribute('data-keywords') || '');
+        const cardTitle = normalizeText(card.querySelector('.tarjeta-title')?.textContent || '');
+        const cardDesc = normalizeText(card.querySelector('.tarjeta-desc')?.textContent || '');
+
+        const matchesCategory = (currentCategory === 'todos' || cardCategory === currentCategory);
+        const matchesSearch = normalizedSearch === '' ||
+          cardKeywords.includes(normalizedSearch) ||
+          cardTitle.includes(normalizedSearch) ||
+          cardDesc.includes(normalizedSearch);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.classList.add('show');
+        resultCount.textContent = '0 resultados';
+      } else {
+        noResults.classList.remove('show');
+        resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'tarjeta' : 'tarjetas'}`;
+      }
+    }
+
+    function clearFilters() {
+      currentSearchTerm = '';
+      currentCategory = 'todos';
+      searchInput.value = '';
+      filterButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-category') === 'todos');
+        btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+      });
+      filterCards();
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      currentSearchTerm = e.target.value;
+      filterCards();
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+        currentCategory = button.getAttribute('data-category');
+        filterCards();
+      });
+    });
+
+    btnClearFilters.addEventListener('click', clearFilters);
+
+    // Contador inicial
+    filterCards();
+
+    // ── Resaltar tarjeta propia (?t=slug) ─────────────────────
+    const params = new URLSearchParams(location.search);
+    const slugPropio = (params.get('t') || '').trim().toLowerCase();
+    if (slugPropio) {
+      const card = document.querySelector('.tarjeta-card[data-slug="' + CSS.escape(slugPropio) + '"]');
+      if (card) {
+        card.style.display = 'flex';
+        card.classList.add('tarjeta-propia');
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 350);
+      }
+    }
+
+    // ── Lightbox Modal ─────────────────────────────────────────
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(imgSrc) {
+      lightboxImg.src = imgSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxDirect() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 250);
+    }
+
+    function closeLightbox(e) {
+      if (e.target === lightbox) {
+        closeLightboxDirect();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightboxDirect();
+      }
+    });
+
+    // ── Modal Formulario (iframe embebido) ──────────────────────
+    const formModal = document.getElementById('form-modal');
+    const formFrame = document.getElementById('form-modal-frame');
+    const formUrl = "https:\/\/lafragata.net\/apostoles\/solicitar.php";
+
+    function openFormModal() {
+      if (!formFrame.src) formFrame.src = formUrl + (formUrl.includes('?') ? '&' : '?') + 'embed=1';
+      formModal.hidden = false;
+      requestAnimationFrame(() => formModal.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+      document.getElementById('form-modal-close').focus();
+    }
+
+    function closeFormModal() {
+      formModal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { formModal.hidden = true; }, 250);
+    }
+
+    document.getElementById('btn-sumar-modal').addEventListener('click', openFormModal);
+    document.getElementById('form-modal-close').addEventListener('click', closeFormModal);
+    formModal.addEventListener('click', (e) => {
+      if (e.target === formModal) closeFormModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && formModal.classList.contains('open')) {
+        closeFormModal();
+      }
+    });
+  </script>
+</body>
+</html>
