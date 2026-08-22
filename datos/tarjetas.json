@@ -1,86 +1,64 @@
 {
-    "updated_at": "2026-08-22T14:49:15+00:00",
+    "updated_at": "2026-08-22T13:14:30-03:00",
     "tarjetas": [
         {
-            "nombre": "Salón Mesa Real",
-            "slug": null,
-            "categoria": "emprendimientos",
-            "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
-            "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
-            "imagen": "assets/tarjetas/reunion_2_6a88d60edeb1d.webp",
-            "imagen_w": 960,
-            "imagen_h": 1200,
+            "nombre": "Aberturas METALUM",
+            "slug": "aberturas-metalum",
+            "categoria": "empresas",
+            "descripcion": "Carpintería en aluminio a medida. Fabricación y colocación de aberturas, ventanas, puertas y cerramientos de aluminio de alta resistencia y diseño.",
+            "keywords": "aberturas metalum carpinteria aluminio ventanas puertas portones cerramientos perfiles metalica apostoles misiones atm construccion",
+            "imagen": "assets/tarjetas/metalum_aberturas.webp",
+            "imagen_w": 1254,
+            "imagen_h": 1254,
             "contactos": [
                 {
-                    "nombre": "Consulta Aquí más sobre Salón Mesa Real",
-                    "telefono": "5493758545119",
-                    "mensaje": "Hola, vengo de la cartelera de apóstoles"
+                    "nombre": "",
+                    "telefono": "5493743474818",
+                    "mensaje": "Hola! Vi tu tarjeta de Aberturas Metalum en ITe Apóstoles y quería solicitar un presupuesto."
                 }
             ],
             "facebook": "",
             "instagram": "",
             "web": "",
             "mapa": "",
-            "destacado": true
+            "destacado": false
         },
         {
-            "nombre": "ESTUDIO CONTABLE SPINNATO LUCAS",
-            "slug": null,
+            "nombre": "Construcciones Miguel Ángel Gitzel",
+            "slug": "construcciones-miguel-angel-gitzel",
+            "categoria": "emprendimientos",
+            "descripcion": "Construcciones en general, obras desde cero, ampliaciones de viviendas, refacciones integrales, mampostería, techados y terminaciones de calidad.",
+            "keywords": "construcciones miguel angel gitzel albanileria obras refacciones remodelaciones ampliaciones techos reformas albanil constructor apostoles misiones",
+            "imagen": "assets/tarjetas/Const_gitzel.webp",
+            "imagen_w": 640,
+            "imagen_h": 640,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743455776",
+                    "mensaje": "Hola! Vi tu tarjeta de Construcciones Gitzel en ITe Apóstoles y quería solicitar un presupuesto."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "CR Informática",
+            "slug": "cr-informatica",
             "categoria": "profesionales",
-            "descripcion": "Cr. Spinnato Lucas, M.P 3279. Direccion Bernardo Houssay 28, Apóstoles Misiones. Experto en constitucion de Sociedades, experto Universitario en Mercados de Capitales, realizamos Altas de Monotributo, Responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. Consultoria profesional para Pymes.",
-            "keywords": "estudio contable spinnato lucas cr. spinnato lucas, m.p 3279. direccion bernardo houssay 28, apostoles misiones. experto en constitucion de sociedades, experto universitario en mercados de capitales, realizamos altas de monotributo, responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. consultoria profesional para pymes. profesionales",
-            "imagen": "assets/tarjetas/reunion_4_6a88d60045424.webp",
-            "imagen_w": 960,
-            "imagen_h": 1200,
-            "contactos": [
-                {
-                    "nombre": "Apriete aquí para comunicarte con el Estudio Spinanto",
-                    "telefono": "5493758483857",
-                    "mensaje": "Hola, vengo desde la página de Apostoles.ar, quisiera hacer una consulta."
-                }
-            ],
-            "facebook": "",
-            "instagram": "",
-            "web": "",
-            "mapa": "",
-            "destacado": false
-        },
-        {
-            "nombre": "Fiambrería Rodri",
-            "slug": null,
-            "categoria": "emprendimientos",
-            "descripcion": "Avda. Julián Zubreski 241. Venta de Fiambres, Bebidas Frías, Comestibles en General y Mucho Más.\r\nLos esperamos con la mejor atención.",
-            "keywords": "fiambreria rodri avda. julian zubreski 241. venta de fiambres, bebidas frias, comestibles en general y mucho mas. los esperamos con la mejor atencion. emprendimientos",
-            "imagen": "assets/tarjetas/1001305272_6a88d3c0022c9.webp",
-            "imagen_w": 834,
-            "imagen_h": 1200,
-            "contactos": [
-                {
-                    "nombre": "Aprieta aquí para Consultar",
-                    "telefono": "5493758499310",
-                    "mensaje": "Hola, vengo de la página Apostoles.ar"
-                }
-            ],
-            "facebook": "",
-            "instagram": "",
-            "web": "",
-            "mapa": "",
-            "destacado": false
-        },
-        {
-            "nombre": "Hamburguederia MyD",
-            "slug": null,
-            "categoria": "emprendimientos",
-            "descripcion": "Venta de comida rapida. Y durante el medio dia venta de comida caseras por viandas.",
-            "keywords": "hamburguederia myd venta de comida rapida. y durante el medio dia venta de comida caseras por viandas. emprendimientos",
-            "imagen": "assets/tarjetas/img_20260806_wa0036_6a88aeab71f06.webp",
-            "imagen_w": 1200,
-            "imagen_h": 1200,
+            "descripcion": "Servicio técnico especializado en computación, mantenimiento, soporte preventivo y correctivo, y reparación de computadoras, notebooks y equipos informáticos.",
+            "keywords": "cr informatica computacion computadoras servicio tecnico reparacion mantenimiento soporte formateo windows pc notebook netbook apostoles misiones",
+            "imagen": "assets/tarjetas/cr_informatica.webp",
+            "imagen_w": 1170,
+            "imagen_h": 1194,
             "contactos": [
                 {
                     "nombre": "",
-                    "telefono": "5493764171802",
-                    "mensaje": "Hola, vi tu tarjeta en la página de Apostoles.ar y quiero hacer un pedido."
+                    "telefono": "5493743486866",
+                    "mensaje": "Hola! Vi tu tarjeta de CR Informática en ITe Apóstoles y quería hacerte una consulta."
                 }
             ],
             "facebook": "",
@@ -90,19 +68,332 @@
             "destacado": false
         },
         {
-            "nombre": "Ve Deco & Eventos 🎈",
-            "slug": null,
-            "categoria": "oficios",
-            "descripcion": "✨ Somos VE Deco & Eventos 🎈\r\n\r\n Decoraciones para eventos en general.\r\nAlquiler de puffs y Mobiliario.\r\n\r\n📆 Consultanos por tu fecha\r\n3758552603",
-            "keywords": "ve deco & eventos ? ? somos ve deco & eventos ? decoraciones para eventos en general. alquiler de puffs y mobiliario. ? consultanos por tu fecha 3758552603 profesionales",
-            "imagen": "assets/tarjetas/img_9245_6a88ad6910a1e.webp",
-            "imagen_w": 1200,
-            "imagen_h": 800,
+            "nombre": "Enfermería a Domicilio",
+            "slug": "enfermeria-a-domicilio",
+            "categoria": "emprendimientos",
+            "descripcion": "Atención personalizada de enfermería domiciliaria: curaciones, colocación de inyectables, control de signos vitales, asistencia a adultos mayores y acompañamiento.",
+            "keywords": "enfermeria a domicilio cuidados inyectables salud curaciones signos vitales asistencia paciente adulto mayor mariana gonzales apostoles misiones",
+            "imagen": "assets/tarjetas/GonzalesMariana.webp",
+            "imagen_w": 864,
+            "imagen_h": 1224,
             "contactos": [
                 {
                     "nombre": "",
-                    "telefono": "5493758552603",
-                    "mensaje": "Hola Ve Deco & Eventos 🎈! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
+                    "telefono": "5493743616393",
+                    "mensaje": "Hola Mariana! Vi tu tarjeta de Enfermería en ITe Apóstoles y quería consultar por una atención."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Frutería & Verdulería Gabys",
+            "slug": "fruteria-verduleria-gabys",
+            "categoria": "emprendimientos",
+            "descripcion": "Venta de frutas y verduras seleccionadas de máxima frescura. Calidad garantizada para la mesa familiar y comercios de la zona.",
+            "keywords": "fruteria verduleria gabys frutas verduras hortalizas alimentos saludables verdulero almacen fresco apostoles misiones",
+            "imagen": "assets/tarjetas/fruteria_verduleria_gabys.webp",
+            "imagen_w": 720,
+            "imagen_h": 736,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743481909",
+                    "mensaje": "Hola! Vi tu tarjeta de Frutería Gabys en ITe Apóstoles y quería consultar por pedidos."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Laura Giménez",
+            "slug": "laura-gimenez",
+            "categoria": "cvs",
+            "descripcion": "Estudiante de Lic. en Administración con sólida experiencia en atención al público, facturación, cobranzas y gestión en planillas de cálculo. Disponibilidad horaria.",
+            "keywords": "laura gimenez cv curriculum vitae administracion secretaria recepcionista facturacion excel atencion al cliente apostoles misiones",
+            "imagen": "assets/tarjetas/cv_laura_gimenez.webp",
+            "imagen_w": 1024,
+            "imagen_h": 1024,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743454291",
+                    "mensaje": "Hola Laura! Vi tu CV en ITe Apóstoles y quería consultarte por una oportunidad laboral."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Lavandería Fer Kia",
+            "slug": "lavanderia-fer-kia",
+            "categoria": "emprendimientos",
+            "descripcion": "Servicio de lavado y secado de ropa, acolchados, frazadas y cortinas. Prendas impecables, suaves y perfumadas con entrega puntual.",
+            "keywords": "lavanderia lavarropa ropa secar frazadas acolchados ferkia lavadero limpieza ropa tintoreria apostoles misiones",
+            "imagen": "assets/tarjetas/lavanderia_ferkia.webp",
+            "imagen_w": 1086,
+            "imagen_h": 1448,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743472667",
+                    "mensaje": "Hola! Vi tu tarjeta de Lavandería Fer Kia en ITe Apóstoles y quería hacerte una consulta."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "LF-Masoterapia y Terapias Corporales",
+            "slug": "lf-masoterapia-y-terapias-corporales",
+            "categoria": "profesionales",
+            "descripcion": "Masajes descontracturantes, relajantes, maderoterapia, piedras calientes, ventosas, drenaje linfático y masaje facial. Especialidad en salud y bienestar femenino. Profesional matriculada.",
+            "keywords": "lf masoterapia masajes terapias corporales descontracturantes relajantes maderoterapia piedras calientes ventosas salud bienestar apostoles misiones",
+            "imagen": "assets/tarjetas/lf_masoterapia.webp",
+            "imagen_w": 908,
+            "imagen_h": 1280,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743481476",
+                    "mensaje": "Hola! Vi tu tarjeta de LF-Masoterapia en ITe Apóstoles y quería solicitar un turno."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Maderas del Norte",
+            "slug": "maderas-del-norte",
+            "categoria": "empresas",
+            "descripcion": "Venta de maderas de primera calidad, tirantes, machimbres, vigas y kits de casas de madera para construcción tradicional y sustentable en la región.",
+            "keywords": "maderas del norte venta de madera machimbre tirantes tablas postes casas premoldeadas construccion techos maderera apostoles misiones",
+            "imagen": "assets/tarjetas/maderas_del_norte.webp",
+            "imagen_w": 1080,
+            "imagen_h": 1080,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743454291",
+                    "mensaje": "Hola! Vi tu tarjeta de Maderas del Norte en ITe Apóstoles y quería consultar precios y stock."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Mateo Kaczarek",
+            "slug": "mateo-kaczarek",
+            "categoria": "cvs",
+            "descripcion": "Técnico con formación y experiencia en mantenimiento electromecánico industrial, instalaciones eléctricas, tableros y diagnóstico preventivo.",
+            "keywords": "mateo kaczarek cv curriculum vitae tecnico electromecanico mantenimiento industrial electricista taller torneria apostoles misiones",
+            "imagen": "assets/tarjetas/cv_mateo_kaczarek.webp",
+            "imagen_w": 1024,
+            "imagen_h": 1024,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743454291",
+                    "mensaje": "Hola Mateo! Vi tu CV en ITe Apóstoles y quería consultarte por una búsqueda laboral."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "MID Informática",
+            "slug": "mid-informatica",
+            "categoria": "profesionales",
+            "descripcion": "Servicio técnico integral de PC, notebooks y dispositivos móviles. Limpieza de virus, optimización de velocidad, reemplazo de componentes e instalación de software.",
+            "keywords": "mid informatica soporte tecnico computadoras reparacion pc notebook celulares formateo software hardware impresoras apostoles misiones",
+            "imagen": "assets/tarjetas/mid_informatica.webp",
+            "imagen_w": 1080,
+            "imagen_h": 1080,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743542289",
+                    "mensaje": "Hola! Vi tu tarjeta de MID Informática en ITe Apóstoles y quería consultar por un servicio."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Mini Fletes & Mudanzas",
+            "slug": "mini-fletes-mudanzas",
+            "categoria": "emprendimientos",
+            "descripcion": "Servicio de traslados urbanos y rurales en Apóstoles y alrededores. Mudanzas particulares, fletes de mercadería y repartos con cuidado y puntualidad.",
+            "keywords": "mini fletes mudanzas traslados fletes furgon camioneta envios cargas repartos transporte apostoles misiones",
+            "imagen": "assets/tarjetas/mini_fletes.webp",
+            "imagen_w": 720,
+            "imagen_h": 1280,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743542289",
+                    "mensaje": "Hola! Vi tu tarjeta de Mini Fletes en ITe Apóstoles y quería consultar por un traslado."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Motomandado Richart",
+            "slug": "motomandado-richart",
+            "categoria": "emprendimientos",
+            "descripcion": "Servicio de mensajería y cadetería express en Apóstoles. Realización de trámites, retiro de compras, farmacias, pago de servicios y entrega de encomiendas.",
+            "keywords": "motomandado richart moto envios cadeteria compras farmacia tramites mensajeria express delivery encomiendas apostoles misiones",
+            "imagen": "assets/tarjetas/motomandado_richart.webp",
+            "imagen_w": 1080,
+            "imagen_h": 1080,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743542289",
+                    "mensaje": "Hola Richart! Vi tu tarjeta en ITe Apóstoles y necesito un motomandado."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "RELTEC Soluciones",
+            "slug": "reltec-soluciones",
+            "categoria": "profesionales",
+            "descripcion": "Instalación, mantenimiento y reparación de aire acondicionado (Split), instalaciones eléctricas domiciliarias e industriales, y domótica/automatización.",
+            "keywords": "refrigeracion aire acondicionado split electricista electricidad instalacion tecnologia domotica automatizacion alarmas camaras reltec apostoles misiones",
+            "imagen": "assets/tarjetas/reltec_soluciones.webp",
+            "imagen_w": 701,
+            "imagen_h": 1108,
+            "contactos": [
+                {
+                    "nombre": "Kevin",
+                    "telefono": "5493743441580",
+                    "mensaje": "Hola Kevin! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio."
+                },
+                {
+                    "nombre": "Angelo",
+                    "telefono": "5493757508282",
+                    "mensaje": "Hola Angelo! Vi tu tarjeta de RELTEC en ITe Apóstoles y quería consultarte por un servicio."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Rubén Seguridad Electrónica",
+            "slug": "ruben-seguridad-electronica",
+            "categoria": "profesionales",
+            "descripcion": "Instalación y configuración de cámaras de seguridad CCTV, sistemas de alarmas, redes WiFi y cableadas, enlaces inalámbricos, fibra óptica e instalación de antenas Starlink.",
+            "keywords": "ruben seguridad electronica camaras cctv alarmas wifi redes lan fibra optica starlink informatica soporte tecnico computacion apostoles misiones",
+            "imagen": "assets/tarjetas/ruben_seguridad_electronica.webp",
+            "imagen_w": 1080,
+            "imagen_h": 1080,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743454291",
+                    "mensaje": "Hola Rubén! Vi tu tarjeta en ITe Apóstoles y quería consultar por una instalación/servicio."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "SL Sonido · Iluminación · Pantalla",
+            "slug": "sl-sonido-iluminacion-pantalla",
+            "categoria": "empresas",
+            "descripcion": "Equipamiento integral para eventos sociales, corporativos y festivales. Sistemas de sonido profesional, luces robóticas, ambientación y pantallas LED gigantes.",
+            "keywords": "sl sonido iluminacion pantallas led dj eventos fiestas bodas cumpleaños 15 años recitales shows tecnicos sonido profesional apostoles misiones",
+            "imagen": "assets/tarjetas/sl_sonido_iluminacion.webp",
+            "imagen_w": 1080,
+            "imagen_h": 1080,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743454291",
+                    "mensaje": "Hola! Vi tu tarjeta de SL Sonido en ITe Apóstoles y quería consultar presupuesto para un evento."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Somer Celulares",
+            "slug": "somer-celulares",
+            "categoria": "emprendimientos",
+            "descripcion": "Servicio técnico y reparación multimarca de celulares. Cambio de módulos, pantallas, pines de carga, baterías y venta de accesorios.",
+            "keywords": "somer celulares reparacion celulares modulos pantallas baterias pines de carga fundas accesorios servicio tecnico telefonia movil apostoles misiones",
+            "imagen": "assets/tarjetas/somer_celuares.webp",
+            "imagen_w": 720,
+            "imagen_h": 1280,
+            "contactos": [
+                {
+                    "nombre": "",
+                    "telefono": "5493743542289",
+                    "mensaje": "Hola! Vi tu tarjeta de Somer Celulares en ITe Apóstoles y quería consultar por una reparación."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Test Pueba",
+            "slug": "test-pueba",
+            "categoria": "empresas",
+            "descripcion": "Esta es una empresa de prueba.",
+            "keywords": "test prueba",
+            "imagen": "assets/tarjetas/54_9_3758_458565_1_6a87c7b8b7c08.webp",
+            "imagen_w": 675,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Diego",
+                    "telefono": "5493764521746",
+                    "mensaje": "Hola esta es una prueba desde La app de Apostoles"
                 }
             ],
             "facebook": "",
@@ -113,7 +404,7 @@
         },
         {
             "nombre": "Wolhein Gabriel",
-            "slug": null,
+            "slug": "wolhein-gabriel",
             "categoria": "cvs",
             "descripcion": "Desarrollador de Soluciones y automatizaciones con experiencia en análisis, diseño y puesta en marcha de sistemas informáticos y automatizaciones para empresas.",
             "keywords": "wolhein gabriel cv curriculum vitae desarrollador programador sistemas informatica automatizaciones software desarrollo tecnologia apostoles misiones",
@@ -125,28 +416,6 @@
                     "nombre": "",
                     "telefono": "5493743454291",
                     "mensaje": "Hola Gabriel! Vi tu CV en ITe Apóstoles y quería consultarte."
-                }
-            ],
-            "facebook": "",
-            "instagram": "",
-            "web": "",
-            "mapa": "",
-            "destacado": false
-        },
-        {
-            "nombre": "Zapateria lo artesanal",
-            "slug": null,
-            "categoria": "oficios",
-            "descripcion": "Arreglos de calzados, talabarteria y tapiceria.",
-            "keywords": "zapateria lo artesanal arreglos de calzados, talabarteria y tapiceria. profesionales",
-            "imagen": "assets/tarjetas/img_20260819_wa0051_6a88822042bbf.webp",
-            "imagen_w": 1200,
-            "imagen_h": 800,
-            "contactos": [
-                {
-                    "nombre": "Pity55",
-                    "telefono": "5493758459159",
-                    "mensaje": "Hola Zapateria lo artesanal! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
                 }
             ],
             "facebook": "",
