@@ -1,6 +1,6 @@
 # Contactos para reportar problemas de seguridad
 Contact: mailto:apostoles.ar@gmail.com
-Contact: tel:+54-9-3743-454291
+Contact: tel:+54-9-3758-458565
 
 # Fecha en la que este archivo expirará (1 año a partir de hoy)
 Expires: 2027-08-19T00:00:00.000Z

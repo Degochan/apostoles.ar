@@ -30,3 +30,7 @@ temp_jardin/
 # Raw and unoptimized assets
 imagenes/
 Escudo_de_Apóstoles_(Misiones).svg
+
+# ZCode
+.zcode/
+tablero.html

@@ -1,8 +1,8 @@
-# Manual de Uso y Mantenimiento — ITe Apóstoles (apostoles.ar)
+# Manual de Uso y Mantenimiento — Apóstoles.ar (apostoles.ar)
 
 ## 1. Qué es este sitio
 
-**ITe Apóstoles** es un portal comunitario estático para la ciudad de Apóstoles, Misiones. Tiene dos funciones principales:
+**Apóstoles.ar** es un portal comunitario estático para la ciudad de Apóstoles, Misiones. Tiene dos funciones principales:
 
 1. **Cartelera digital** (`tablero.html`): directorio de emprendimientos, profesionales, empresas y CVs de postulantes, con contacto directo por WhatsApp.
 2. **Gestión de turnos por WhatsApp**: botones que abren chats de `wa.me` hacia el bot de turnos o el número de administración.
