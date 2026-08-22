@@ -19,7 +19,7 @@ apostoles.ar/
 ├── assets/
 │   ├── style.css       → Estilos base compartidos (variables de diseño, navbar, footer, botones)
 │   ├── app.js          → Configuración central de números de WhatsApp + utilidades
-│   └── *.webp/.jpeg    → Imágenes de tarjetas (una por emprendimiento) + escudo
+│   └── *.webp/.jpeg    → Imágenes de tarjetas (una por emprendimiento) + flyers/escudo
 ├── CNAME               → Dominio personalizado: apostoles.ar (GitHub Pages)
 ├── .nojekyll           → Desactiva Jekyll en GitHub Pages
 ├── robots.txt          → Permite todos los crawlers, incluidos bots de IA (GPTBot, ClaudeBot, etc.)
@@ -141,7 +141,7 @@ Desde 2026 el tablero se administra **sin editar archivos ni usar git**: todo se
 
 1. Entrar a `https://lafragata.net/admin/` → sección **🧉 Apóstoles** (solo administradores completos).
 2. Alta/edición de tarjetas en **Tarjetas** (con imagen: se convierte sola a WebP ≤1200px; multi-contacto WhatsApp), más pausar/destacar/ordenar/baja lógica.
-3. Botón **Publicar**: el sistema genera el tablero (HTML server-side para SEO) y lo sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
+3. Botón **Publicar**: el sistema genera el tablero, las fichas SEO y los flyers con QR, y los sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
 4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`, `notify_email`, `form_url`) desde el admin. El ZIP incluye las fichas `t/*.html`.
 
 La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata) y el archivo generado es `tablero.html`.
@@ -150,7 +150,7 @@ La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.a
 
 **Archivos de este repo que pasa a generar el sistema** (no editarlos más a mano una vez en producción):
 
-- `assets/tarjetas/` — imágenes de tarjetas nuevas (WebP ≤1200px).
+- `assets/tarjetas/` — imágenes de tarjetas nuevas (WebP ≤1200px) y `flyer-{slug}.png` (PNG horizontal A5 con QR).
 - `datos/tarjetas.json` — datos de todas las tarjetas activas.
 - `tablero.html` — el tablero completo.
 - `t/*.html` — las fichas individuales generadas para las tarjetas activas con slug.
