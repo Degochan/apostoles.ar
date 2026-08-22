@@ -1090,7 +1090,7 @@
           const nombre = typeof t.nombre === 'string' ? t.nombre : 'Comercio destacado';
           const link = document.createElement('a');
           link.className = 'comercio-destacado-card';
-          link.href = 'tablero.html?t=' + encodeURIComponent(t.slug);
+          link.href = 't/' + encodeURIComponent(t.slug) + '.html';
 
           const imagen = document.createElement('img');
           imagen.src = t.imagen;
@@ -1110,7 +1110,7 @@
           title.textContent = nombre;
 
           const action = document.createElement('span');
-          action.textContent = 'Ver tarjeta completa →';
+          action.textContent = 'Ver ficha completa →';
 
           copy.append(badge, title, action);
           link.append(imagen, copy);
