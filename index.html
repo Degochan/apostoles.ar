@@ -297,6 +297,72 @@
       font-weight: 500;
     }
 
+    /* ── Comercio destacado (datos/tarjetas.json) ──────────── */
+    .comercio-destacado-section {
+      background: linear-gradient(180deg, #faf5ff 0%, #fff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .comercio-destacado-section[hidden] { display: none; }
+    .comercio-destacado-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.15rem;
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    .comercio-destacado-card {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      min-height: 112px;
+      padding: .85rem;
+      color: inherit;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #d8b4fe;
+      border-left: 4px solid var(--purple);
+      border-radius: 12px;
+      box-shadow: 0 5px 16px rgba(124, 53, 239, .1);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .comercio-destacado-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--purple);
+      box-shadow: 0 9px 22px rgba(124, 53, 239, .18);
+    }
+    .comercio-destacado-card img {
+      width: 104px;
+      height: 82px;
+      flex: 0 0 104px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #f1f5f9;
+    }
+    .comercio-destacado-copy { min-width: 0; }
+    .comercio-destacado-copy small {
+      display: block;
+      margin-bottom: .25rem;
+      color: var(--purple);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .comercio-destacado-copy strong {
+      display: block;
+      overflow: hidden;
+      color: #0f172a;
+      font-size: .98rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .comercio-destacado-copy span {
+      display: block;
+      margin-top: .3rem;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
     /* ── Tarjetas de Teléfonos Útiles ───────────────────────── */
     .phone-card {
       background: #fff;
@@ -697,6 +763,15 @@
   </div>
 </div>
 
+<!-- ── Comercio Destacado (se actualiza desde tarjetas.json) ── -->
+<section id="comercio-destacado" class="section comercio-destacado-section" hidden aria-labelledby="comercio-destacado-title">
+  <div class="container">
+    <h2 id="comercio-destacado-title" class="section-title">⭐ Comercio destacado</h2>
+    <p class="section-sub">Conocé algunas propuestas locales que hoy tienen un lugar especial en la cartelera.</p>
+    <div id="destacado-slot" class="comercio-destacado-grid" aria-live="polite"></div>
+  </div>
+</section>
+
 <!-- ── Teléfonos Útiles e Instituciones ─────────────────────── -->
 <section id="telefonos-utiles" class="section">
   <div class="container">
@@ -977,6 +1052,80 @@
     const item = btn.parentElement;
     item.classList.toggle('open');
   }
+
+  // La sección se alimenta del JSON generado por la Fragata para no duplicar
+  // manualmente nombres, imágenes ni estados de destacada en este index.
+  function cargarComerciosDestacados() {
+    const section = document.getElementById('comercio-destacado');
+    const slot = document.getElementById('destacado-slot');
+    if (!section || !slot) return;
+
+    fetch('datos/tarjetas.json?index-v=' + Date.now(), { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error('No se pudo cargar la cartelera.');
+        return response.json();
+      })
+      .then(data => {
+        const etiquetas = {
+          profesionales: 'Profesional / Servicio',
+          emprendimientos: 'Emprendimiento',
+          empresas: 'Empresa',
+          cvs: 'CV / Postulante',
+          oficios: 'Oficio'
+        };
+        const tarjetas = Array.isArray(data.tarjetas) ? data.tarjetas : [];
+        const destacadas = tarjetas.filter(t => {
+          const slug = typeof t.slug === 'string' ? t.slug : '';
+          const imagen = typeof t.imagen === 'string' ? t.imagen : '';
+          return (t.destacado === true || t.destacado === 1)
+            && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)
+            && imagen.startsWith('assets/tarjetas/');
+        }).slice(0, 3);
+
+        if (!destacadas.length) return;
+
+        const fragment = document.createDocumentFragment();
+        destacadas.forEach(t => {
+          const categoria = etiquetas[t.categoria] || 'Tarjeta local';
+          const nombre = typeof t.nombre === 'string' ? t.nombre : 'Comercio destacado';
+          const link = document.createElement('a');
+          link.className = 'comercio-destacado-card';
+          link.href = 'tablero.html?t=' + encodeURIComponent(t.slug);
+
+          const imagen = document.createElement('img');
+          imagen.src = t.imagen;
+          imagen.width = 104;
+          imagen.height = 82;
+          imagen.loading = 'lazy';
+          imagen.decoding = 'async';
+          imagen.alt = nombre + ' — ' + categoria + ' en Apóstoles';
+
+          const copy = document.createElement('span');
+          copy.className = 'comercio-destacado-copy';
+
+          const badge = document.createElement('small');
+          badge.textContent = '★ ' + categoria;
+
+          const title = document.createElement('strong');
+          title.textContent = nombre;
+
+          const action = document.createElement('span');
+          action.textContent = 'Ver tarjeta completa →';
+
+          copy.append(badge, title, action);
+          link.append(imagen, copy);
+          fragment.append(link);
+        });
+
+        slot.replaceChildren(fragment);
+        section.hidden = false;
+      })
+      .catch(() => {
+        // Si el JSON no está disponible, el index conserva el resto de contenido.
+      });
+  }
+
+  cargarComerciosDestacados();
 </script>
 </body>
 </html>

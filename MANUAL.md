@@ -51,7 +51,9 @@ const WA_ADMIN = '5493743454291'; // Superadmin / sumar tarjetas
 
 ### index.html (inicio)
 
-Secciones en orden: navbar → hero con escudo → banner de turnos → barra de stats → teléfonos útiles (Hospital, Bomberos, Policía, Municipalidad) → turismo yerbatero → CTA al tablero → casos de uso → cómo funciona → CTA organizaciones → FAQ (acordeón con `toggleFaq`) → CTA final → footer → botón flotante de WhatsApp.
+Secciones en orden: navbar → hero con escudo → banner de turnos → barra de stats → **Comercio destacado** (se carga desde `datos/tarjetas.json`) → teléfonos útiles (Hospital, Bomberos, Policía, Municipalidad) → turismo yerbatero → CTA al tablero → casos de uso → cómo funciona → CTA organizaciones → FAQ (acordeón con `toggleFaq`) → CTA final → footer → botón flotante de WhatsApp.
+
+El bloque **Comercio destacado** muestra hasta tres tarjetas con `destacado: true`, enlazadas a su tarjeta propia en `tablero.html?t=slug`. No se cargan nombres ni imágenes a mano: al publicar desde La Fragata se actualiza el JSON y el index las vuelve a leer.
 
 Los estilos de esta página están **embebidos en el `<head>`** del archivo, sobre la base de `assets/style.css`.
 
@@ -144,7 +146,7 @@ Desde 2026 el tablero se administra **sin editar archivos ni usar git**: todo se
 3. Botón **Publicar**: el sistema genera el tablero, las fichas SEO y los flyers con QR, y los sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
 4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`, `notify_email`, `form_url`) desde el admin. El ZIP incluye las fichas `t/*.html`.
 
-La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata) y el archivo generado es `tablero.html`.
+La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata) y el archivo generado es `tablero.html`. El index conserva su estructura manual, pero su bloque de destacadas se alimenta automáticamente de `datos/tarjetas.json`.
 
 **Solicitudes públicas (2026-08):** el botón **"Sumar mi Tarjeta Gratis"** del tablero abre el formulario `https://lafragata.net/apostoles/solicitar.php` (link secundario a WhatsApp incluido). El vecino carga sus datos; llega un email al admin y la solicitud aparece en **📨 Solicitudes** del panel con badge de pendientes. Al aprobar se crea la tarjeta pausada para revisar, activar y publicar. Nada se publica sin aprobación; el formulario tiene anti-spam (honeypot, time-trap, rate-limit) y las imágenes se re-codifican a WebP.
 
