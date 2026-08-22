@@ -15,6 +15,7 @@ No hay backend, base de datos ni aplicaciones que compilar: es HTML + CSS + Java
 apostoles.ar/
 ├── index.html          → Página principal (landing: hero, turnos, teléfonos útiles, turismo, FAQ)
 ├── tablero.html        → Cartelera: buscador, filtros y tarjetas con lightbox
+├── t/{slug}.html       → Ficha SEO individual de cada tarjeta publicada
 ├── assets/
 │   ├── style.css       → Estilos base compartidos (variables de diseño, navbar, footer, botones)
 │   ├── app.js          → Configuración central de números de WhatsApp + utilidades
@@ -22,7 +23,7 @@ apostoles.ar/
 ├── CNAME               → Dominio personalizado: apostoles.ar (GitHub Pages)
 ├── .nojekyll           → Desactiva Jekyll en GitHub Pages
 ├── robots.txt          → Permite todos los crawlers, incluidos bots de IA (GPTBot, ClaudeBot, etc.)
-├── sitemap.xml         → Solo 2 URLs: / y /tablero.html
+├── sitemap.xml         → Inicio, tablero y fichas individuales publicadas
 ├── llms.txt            → Descripción semántica del sitio para LLMs / GEO
 └── .well-known/security.txt → Contacto de seguridad
 ```
@@ -61,6 +62,8 @@ Los estilos de esta página están **embebidos en el `<head>`** del archivo, sob
   - `data-keywords` → palabras clave para el buscador (siempre en minúsculas, sin tildes).
   - Imagen (`assets/nombre.webp`) con `openLightbox()` al hacer clic para ampliar.
   - Título, badge de categoría, descripción y botón(es) de WhatsApp con mensaje precargado.
+- El título de cada tarjeta enlaza a `t/{slug}.html`, una ficha estática con
+  descripción completa, imagen, todos los contactos, redes y datos estructurados.
 - El buscador normaliza el texto (quita tildes, minúsculas) y filtra por keywords + título + descripción. Los botones de filtro combinan con la búsqueda (AND).
 - Muestra contador de resultados y mensaje "no encontramos resultados" si no hay coincidencias.
 
@@ -139,7 +142,7 @@ Desde 2026 el tablero se administra **sin editar archivos ni usar git**: todo se
 1. Entrar a `https://lafragata.net/admin/` → sección **🧉 Apóstoles** (solo administradores completos).
 2. Alta/edición de tarjetas en **Tarjetas** (con imagen: se convierte sola a WebP ≤1200px; multi-contacto WhatsApp), más pausar/destacar/ordenar/baja lógica.
 3. Botón **Publicar**: el sistema genera el tablero (HTML server-side para SEO) y lo sube a este repositorio por la **API de GitHub** (rama `main`), con lo que GitHub Pages publica solo en 1–2 minutos.
-4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`, `notify_email`, `form_url`) desde el admin.
+4. También hay descarga de ZIP de respaldo y configuración (`output_file`, `base_url`, `notify_email`, `form_url`) desde el admin. El ZIP incluye las fichas `t/*.html`.
 
 La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.ar` en La Fragata) y el archivo generado es `tablero.html`.
 
@@ -150,6 +153,7 @@ La publicación es LIVE a este repo (`GITHUB_REPO_APOSTOLES=Degochan/apostoles.a
 - `assets/tarjetas/` — imágenes de tarjetas nuevas (WebP ≤1200px).
 - `datos/tarjetas.json` — datos de todas las tarjetas activas.
 - `tablero.html` — el tablero completo.
+- `t/*.html` — las fichas individuales generadas para las tarjetas activas con slug.
 - `sitemap.xml` — con `lastmod` actualizado en cada publicación.
 
 Los archivos que **siguen siendo manuales**: `index.html`, `assets/style.css`, `assets/app.js`, `robots.txt`, `llms.txt`, `CNAME`, `.nojekyll`. El manual completo del admin está en `docs/MANUAL_APOSTOLES_ADMIN.md` del proyecto lafragata.net.
