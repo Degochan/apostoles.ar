@@ -11,13 +11,16 @@
   <meta property="og:url" content="https://apostoles.ar/">
   <meta property="og:site_name" content="Apóstoles.ar">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <meta property="og:image" content="https://apostoles.ar/assets/marca/png-final/placa-social-1280x720.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Apóstoles.ar — Cartelera Comunitaria y Turnos por WhatsApp">
   <meta name="twitter:description" content="Portal comunitario de Apóstoles, Misiones: Cartelera interactiva, teléfonos de emergencia y turnos por WhatsApp.">
-  <meta name="twitter:image" content="https://apostoles.ar/assets/escudo_apostoles.svg">
+  <meta name="twitter:image" content="https://apostoles.ar/assets/marca/png-final/placa-social-1280x720.png">
   <link rel="canonical" href="https://apostoles.ar/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧉</text></svg>">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/marca/png-final/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/marca/png-final/apple-touch-icon-180.png">
   <link rel="stylesheet" href="assets/style.css">
   
   <script type="application/ld+json">
@@ -73,6 +76,9 @@
     .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.15rem; }
 
     /* ── Navbar ────────────────────────────────────────────── */
+    .brand-logo { display: block; height: auto; object-fit: contain; }
+    .brand-logo-nav { width: 176px; }
+    .brand-logo-footer { width: 214px; }
     .navbar-links { display: flex; gap: 1.35rem; font-size: .88rem; align-items: center; }
     .navbar-links a { color: var(--muted); font-weight: 500; transition: color .2s; }
     .navbar-links a:hover { color: var(--purple); }
@@ -243,13 +249,8 @@
       align-items: center;
     }
     .hero-shield-img {
-      height: 200px;
-      width: auto;
-      border-radius: 16px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-      border: 3.5px solid rgba(255, 255, 255, 0.6);
-      background: rgba(255, 255, 255, 0.95);
-      padding: 10px;
+      width: min(100%, 430px);
+      height: auto;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     .hero-shield-img:hover {
@@ -265,7 +266,7 @@
       }
       .hero-text-side { text-align: left; }
       .hero-image-side { justify-content: flex-end; }
-      .hero-shield-img { height: 280px; }
+      .hero-shield-img { width: min(100%, 430px); }
       .hero-desc { margin: 0 0 2.25rem 0; }
       .hero-cta { justify-content: flex-start; }
       .hero-note { justify-content: flex-start; }
@@ -649,6 +650,7 @@
 
     @media (max-width: 600px) {
       .navbar-links { display: none; }
+      .brand-logo-nav { width: 148px; }
       .section { padding: 3rem 0; }
       .stat-num { font-size: 1.5rem; }
     }
@@ -660,8 +662,7 @@
 <nav class="navbar">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles" style="height: 32px; width: 32px; object-fit: contain;">
-      Apóstoles.ar
+      <img src="assets/marca/kit/10-navbar-compacto-oscuro.svg" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-nav">
     </a>
     <div class="navbar-links">
       <a href="#telefonos-utiles">Teléfonos útiles</a>
@@ -707,7 +708,7 @@
     </div>
     <div class="hero-image-side">
       <a href="tablero.html" aria-label="Ver Tablero de Tarjetas">
-        <img src="assets/escudo_apostoles.svg" alt="Escudo de Apóstoles, Misiones" class="hero-shield-img">
+        <img src="assets/marca/kit/08-horizontal-transparente.svg" alt="Apóstoles — Cartelera de Apóstoles" class="hero-shield-img">
       </a>
     </div>
   </div>
@@ -1026,8 +1027,7 @@
 <footer>
   <div class="container">
     <div class="footer-brand">
-      <img src="assets/escudo_apostoles.svg" alt="Escudo Apóstoles" style="height: 24px; width: 24px; object-fit: contain;">
-      Apóstoles.ar — Portal Comunitario
+      <img src="assets/marca/kit/09-navbar-compacto-blanco.svg" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-footer">
     </div>
     <div class="footer-links">
       <a href="index.html">Inicio</a>
