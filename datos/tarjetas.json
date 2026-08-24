@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-08-22T23:46:33+00:00",
+    "updated_at": "2026-08-24T23:47:09+00:00",
     "tarjetas": [
         {
             "nombre": "Salón Mesa Real",
@@ -18,9 +18,9 @@
                 }
             ],
             "facebook": "",
-            "instagram": "",
+            "instagram": "https://www.instagram.com/salonmesareal?igsi=MWduZDJpeXh5anNoNQ==",
             "web": "",
-            "mapa": "",
+            "mapa": "https://maps.app.goo.gl/tGK7trzxT1DC5WNz9",
             "destacado": true
         },
         {
