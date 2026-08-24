@@ -18,7 +18,7 @@ proporciones.
 | Navbar sobre fondo claro | `kit/10-navbar-compacto-oscuro.svg` | Logo compacto con texto oscuro |
 | Navbar o footer sobre fondo oscuro | `kit/09-navbar-compacto-blanco.svg` | Logo compacto claro |
 | Hero sobre violeta o imagen oscura | `kit/08-horizontal-transparente.svg` | Logo horizontal con bajada y regla |
-| Favicon del navegador | `png-final/favicon-32.png` o `favicon.ico` | No reemplazar por emojis |
+| Favicon del navegador | `png-final/favicon-transparent-32.png` o `favicon-transparent-64.png` | Mate recortado, transparente, con bombilla violeta |
 | Apple Touch Icon | `png-final/apple-touch-icon-180.png` | Ícono para dispositivos Apple |
 | Open Graph institucional | `png-final/placa-social-1280x720.png` | Inicio y tablero |
 | Banner web amplio | `png-final/banner-1920x480.png` | Banners o cabeceras especiales |
