@@ -661,6 +661,63 @@
       .section { padding: 3rem 0; }
       .stat-num { font-size: 1.5rem; }
     }
+
+    /* ── Aviso comunitario (operativos / eventos puntuales) ── */
+    .aviso-operativo { padding: 2.5rem 0 0.5rem; }
+    .aviso-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--green-wa);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 1.9rem 1.5rem 1.6rem;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .aviso-card h2 {
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 0.5rem;
+    }
+    .aviso-fecha { color: var(--green-wa); white-space: nowrap; }
+    .aviso-sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 0 auto 1.25rem; }
+    .aviso-tramites { margin-top: 1.4rem; }
+    .aviso-tramites summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--purple-dark);
+      font-size: 0.95rem;
+      display: inline-block;
+      user-select: none;
+    }
+    .aviso-tramites summary::-webkit-details-marker { display: none; }
+    .aviso-tramites summary::after { content: ' ▾'; }
+    .aviso-tramites[open] summary::after { content: ' ▴'; }
+    .aviso-tramites[open] summary { margin-bottom: 0.75rem; }
+    .aviso-tramites ul {
+      list-style: none;
+      columns: 3;
+      column-gap: 1.5rem;
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .aviso-tramites li {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #334155;
+      padding: 0.14rem 0;
+      break-inside: avoid;
+    }
+    .aviso-tramites li::before { content: '✓ '; color: var(--green-wa); font-weight: 700; }
+    @media (max-width: 600px) {
+      .aviso-operativo { padding: 1.75rem 0 0.25rem; }
+      .aviso-card { padding: 1.5rem 1rem 1.25rem; }
+      .aviso-tramites ul { columns: 2; column-gap: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -717,6 +774,40 @@
       <a href="tablero.html" aria-label="Ver Tablero de Tarjetas">
         <img src="assets/marca/kit/14-vertical-blanco.svg" alt="Apóstoles — Cartelera de Apóstoles" class="hero-brand-img" width="680" height="620">
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Aviso: Operativo ANSES (se auto-oculta pasado el evento) ── -->
+<section id="aviso-operativo" class="aviso-operativo" aria-labelledby="aviso-operativo-title">
+  <div class="container">
+    <div class="aviso-card">
+      <span class="badge badge-amber">🏛️ AVISO A LA COMUNIDAD</span>
+      <h2 id="aviso-operativo-title">Operativo ANSES en Apóstoles — <span class="aviso-fecha">martes 8 de septiembre</span></h2>
+      <p class="aviso-sub">
+        ANSES y PAMI atienden en el <strong>CAP PAMI Apóstoles (Belgrano&nbsp;447)</strong>.
+        Cupos limitados: <strong>120 turnos</strong> con reserva previa por WhatsApp.
+      </p>
+      <a class="btn-cartelera" href="https://wa.me/5493758458565?text=Hola! Quiero reservar turno para el Operativo ANSES del martes 8 de septiembre (CAP PAMI, Belgrano 447)" onclick="irAlBot('Hola! Quiero reservar turno para el Operativo ANSES del martes 8 de septiembre (CAP PAMI, Belgrano 447)'); return false;">
+        💬 Reservar turno por WhatsApp
+      </a>
+      <details class="aviso-tramites">
+        <summary>📋 Ver trámites disponibles</summary>
+        <ul>
+          <li>Entrega de libretas</li>
+          <li>Certificado escolar</li>
+          <li>Asignación por embarazo</li>
+          <li>Asignación por nacimiento</li>
+          <li>Pago único por matrimonio</li>
+          <li>Embargo de salario</li>
+          <li>CODEM</li>
+          <li>Vista de expediente</li>
+          <li>Modificación de datos</li>
+          <li>Clave de Seguridad Social</li>
+          <li>Programa Hogar</li>
+          <li>Monotributo Social</li>
+        </ul>
+      </details>
     </div>
   </div>
 </section>
@@ -1059,6 +1150,16 @@
     const item = btn.parentElement;
     item.classList.toggle('open');
   }
+
+  // El aviso del operativo ANSES se oculta solo pasado el evento
+  // (fin del martes 8/9/2026, hora de Argentina).
+  (function ocultarAvisoVencido() {
+    const finDelOperativo = new Date('2026-09-09T00:00:00-03:00');
+    if (new Date() > finDelOperativo) {
+      const aviso = document.getElementById('aviso-operativo');
+      if (aviso) aviso.hidden = true;
+    }
+  })();
 
   // La sección se alimenta del JSON generado por la Fragata para no duplicar
   // manualmente nombres, imágenes ni estados de destacada en este index.
