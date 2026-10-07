@@ -1,28 +1,6 @@
 {
-    "updated_at": "2026-08-27T21:48:45+00:00",
+    "updated_at": "2026-10-07T16:01:06+00:00",
     "tarjetas": [
-        {
-            "nombre": "Salón Mesa Real",
-            "slug": "mesa-real",
-            "categoria": "emprendimientos",
-            "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
-            "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
-            "imagen": "assets/tarjetas/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp",
-            "imagen_w": 928,
-            "imagen_h": 1152,
-            "contactos": [
-                {
-                    "nombre": "Consulta Aquí más sobre Salón Mesa Real",
-                    "telefono": "5493758545119",
-                    "mensaje": "Hola, vengo de la cartelera de apóstoles"
-                }
-            ],
-            "facebook": "",
-            "instagram": "https://www.instagram.com/salonmesareal?igsi=MWduZDJpeXh5anNoNQ==",
-            "web": "",
-            "mapa": "https://maps.app.goo.gl/tGK7trzxT1DC5WNz9",
-            "destacado": true
-        },
         {
             "nombre": "ESTUDIO CONTABLE SPINNATO LUCAS",
             "slug": "spinnato-lucas",
@@ -37,6 +15,28 @@
                     "nombre": "Apriete aquí para comunicarte con el Estudio Spinanto",
                     "telefono": "5493758483857",
                     "mensaje": "Hola, vengo desde la página de Apostoles.ar, quisiera hacer una consulta."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "F&F Automotores",
+            "slug": "utomotores",
+            "categoria": "profesionales",
+            "descripcion": "Venta de autos usados seleccionados y 0km en Apóstoles y zona sur. Ofrecemos financiación a medida, facilidades de pago y tomamos tu usado con la mejor cotización. Atención personalizada para ayudarte a encontrar tu próximo vehículo con total confianza. Atendemos de Lunes a Sábados de 8:30 a 12:00 hs y de 16:00 a 20:00 hs. en Sarmiento 98 y Gral. Paz",
+            "keywords": "f&f automotores venta de autos usados seleccionados y 0km en apostoles y zona sur. ofrecemos financiacion a medida, facilidades de pago y tomamos tu usado con la mejor cotizacion. atencion personalizada para ayudarte a encontrar tu proximo vehiculo con total confianza. atendemos de lunes a sabados de 8:30 a 12:00 hs y de 16:00 a 20:00 hs. en sarmiento 98 y gral. paz profesionales",
+            "imagen": "assets/tarjetas/ee_6ac661f7cb5b8.webp",
+            "imagen_w": 1200,
+            "imagen_h": 1196,
+            "contactos": [
+                {
+                    "nombre": "Sebastian Ostafchuk",
+                    "telefono": "5493758456336",
+                    "mensaje": "Hola F&F Automotores! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
                 }
             ],
             "facebook": "",
@@ -87,6 +87,72 @@
             "instagram": "",
             "web": "",
             "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Mecánica F&F",
+            "slug": "ecanica",
+            "categoria": "profesionales",
+            "descripcion": "Mantenimiento integral y reparación de vehículos en Apóstoles. Realizamos diagnóstico computarizado, mecánica general, frenos, tren delantero, cambio de aceite y filtro. Trabajo garantizado y atención personalizada para que viajes con total seguridad. Atendemos de Lunes a Viernes de 8:00 a 12:00 hs y de 15:30 a 20:00 hs. ¡Agendá tu turno o solicitá presupuesto por WhatsApp!",
+            "keywords": "mecanica f&f mantenimiento integral y reparacion de vehiculos en apostoles. realizamos diagnostico computarizado, mecanica general, frenos, tren delantero, cambio de aceite y filtro. trabajo garantizado y atencion personalizada para que viajes con total seguridad. atendemos de lunes a viernes de 8:00 a 12:00 hs y de 15:30 a 20:00 hs. !agenda tu turno o solicita presupuesto por whatsapp! profesionales",
+            "imagen": "assets/tarjetas/taller_bien_6a9eb67254ae2.webp",
+            "imagen_w": 1195,
+            "imagen_h": 896,
+            "contactos": [
+                {
+                    "nombre": "Sebastian Ostafchuk",
+                    "telefono": "5493758456336",
+                    "mensaje": "Hola Mecánica F&F! Vi tu tarjeta en la cartelera de Apóstoles y quiero contactarte."
+                }
+            ],
+            "facebook": "",
+            "instagram": "",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Ruffians Barbers",
+            "slug": "uffians-arbers",
+            "categoria": "profesionales",
+            "descripcion": "Cortes de cabellos masculinos, máximo detalle y dedicación en cada trabajo.\r\nTrabajamos solo por turnos en la barbería y cortes a domicilio!",
+            "keywords": "ruffians barbers cortes de cabellos masculinos, maximo detalle y dedicacion en cada trabajo. trabajamos solo por turnos en la barberia y cortes a domicilio!",
+            "imagen": "assets/tarjetas/img_8599_6a9c4d51c84cd.webp",
+            "imagen_w": 944,
+            "imagen_h": 1200,
+            "contactos": [
+                {
+                    "nombre": "Agendar turno!",
+                    "telefono": "5493758549084",
+                    "mensaje": "Hola, me gustaría reservar un turno el día ____ a las ____."
+                }
+            ],
+            "facebook": "",
+            "instagram": "https://www.instagram.com/Ruffiansbarbers",
+            "web": "",
+            "mapa": "",
+            "destacado": false
+        },
+        {
+            "nombre": "Salón Mesa Real",
+            "slug": "mesa-real",
+            "categoria": "emprendimientos",
+            "descripcion": "Salón de Eventos Mesa Real, es un espacio para festejar el cual tiene Mesa de Pool, Pelotero, Metegol, Cantina, Luces Rítmicas, Máquina de Humo, Mesas, Sillas, Zona de Cocina y más. \r\nTe esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y Grandes",
+            "keywords": "salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos",
+            "imagen": "assets/tarjetas/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp",
+            "imagen_w": 928,
+            "imagen_h": 1152,
+            "contactos": [
+                {
+                    "nombre": "Consulta Aquí más sobre Salón Mesa Real",
+                    "telefono": "5493758545119",
+                    "mensaje": "Hola, vengo de la cartelera de apóstoles"
+                }
+            ],
+            "facebook": "",
+            "instagram": "https://www.instagram.com/salonmesareal?igsi=MWduZDJpeXh5anNoNQ==",
+            "web": "",
+            "mapa": "https://maps.app.goo.gl/tGK7trzxT1DC5WNz9",
             "destacado": false
         },
         {
