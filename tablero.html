@@ -87,6 +87,25 @@
       display: block;
     }
 
+    .skip-link {
+      position: fixed;
+      top: .75rem;
+      left: .75rem;
+      z-index: 1200;
+      transform: translateY(-160%);
+      padding: .65rem .9rem;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--purple-dark);
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
     .btn-back {
       color: var(--muted);
       font-size: .88rem;
@@ -199,6 +218,7 @@
       flex-wrap: wrap;
       gap: .5rem;
       align-items: center;
+      row-gap: .65rem;
     }
 
     .filter-label {
@@ -223,6 +243,7 @@
       display: inline-flex;
       align-items: center;
       gap: .4rem;
+      touch-action: manipulation;
     }
 
     .btn-filter:hover {
@@ -353,11 +374,34 @@
     }
 
     /* ── Grid del Tablero (más respirada) ───────────────────── */
+    .cards-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0 0 1rem;
+    }
+
+    .cards-heading h2 {
+      color: #111827;
+      font-size: clamp(1.35rem, 3vw, 1.7rem);
+      letter-spacing: -.02em;
+      text-wrap: balance;
+    }
+
+    .cards-heading p {
+      color: var(--muted);
+      font-size: .86rem;
+      margin: 0;
+      text-align: right;
+    }
+
     .tablero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
       margin-bottom: 4rem;
+      align-items: start;
     }
 
     .tarjeta-card {
@@ -369,6 +413,8 @@
       transition: transform .2s, box-shadow .2s, border-color .2s;
       display: flex;
       flex-direction: column;
+      align-self: start;
+      min-width: 0;
     }
 
     .tarjeta-card:hover {
@@ -407,14 +453,24 @@
 
     .tarjeta-img-container {
       position: relative;
-      background: #f3f4f6;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(145deg, #f8f7ff 0%, #ede9fe 100%);
+      width: 100%;
+      padding: 0;
+      border: 0;
+      text-align: left;
+      font: inherit;
       overflow: hidden;
       cursor: zoom-in;
     }
 
     .tarjeta-img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      padding: .55rem;
+      object-fit: contain;
       display: block;
       transition: transform .3s;
     }
@@ -446,7 +502,8 @@
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex: none;
+      min-width: 0;
     }
 
     .tarjeta-cat-badge {
@@ -507,8 +564,19 @@
       font-size: .85rem;
       color: var(--muted);
       margin-bottom: 1.25rem;
-      flex: 1;
+      flex: none;
       line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .tarjeta-actions {
+      display: grid;
+      gap: .5rem;
+      margin-top: auto;
+    }
+
+    .tarjeta-actions .btn-wa-contact {
+      min-width: 0;
     }
 
     .btn-wa-contact {
@@ -525,6 +593,8 @@
       gap: .4rem;
       transition: background .2s, transform .1s;
       width: 100%;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
     }
 
     .btn-wa-contact:hover {
@@ -574,7 +644,6 @@
       border: 1.5px solid var(--green-wa);
       color: var(--green-wa-dk);
       padding: .65rem .8rem;
-      flex: 0 0 auto;
     }
     .btn-share:hover {
       background: var(--purple-light);
@@ -773,6 +842,10 @@
       padding: 1.5rem;
     }
 
+    .lightbox[aria-hidden="true"] {
+      visibility: hidden;
+    }
+
     .lightbox.active {
       opacity: 1;
       pointer-events: all;
@@ -830,17 +903,31 @@
       .destacadas-heading p { margin-top: .25rem; }
       .destacadas-grid { grid-template-columns: 1fr; }
       .brand-logo-nav { width: 190px; }
+      .cards-heading { display: block; }
+      .cards-heading p { margin-top: .25rem; text-align: left; }
+      .tarjeta-img-container { aspect-ratio: 5 / 4; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
   <!-- ── Navbar ───────────────────────────────────────────────── -->
   <nav class="navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
-        <img src="assets/marca/kit/10-navbar-compacto-oscuro.svg" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-nav">
+        <img src="assets/marca/kit/10-navbar-compacto-oscuro.svg" width="220" height="58" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-nav">
       </a>
       <a class="btn-back" href="index.html">
         ← Volver al inicio
@@ -852,7 +939,7 @@
   <header class="header-section">
     <div class="container">
       <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
-        <img src="assets/marca/kit/12-horizontal-escudo-blanco.svg" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo-hero">
+        <img src="assets/marca/kit/12-horizontal-escudo-blanco.svg" width="560" height="148" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo-hero">
       </div>
       <span class="badge badge-purple">📍 APÓSTOLES, MISIONES</span>
       <h1>Cartelera de Emprendimientos, Profesionales y CVs</h1>
@@ -863,15 +950,15 @@
   </header>
 
   <!-- ── Contenido Principal ─────────────────────────────────── -->
-  <main class="container">
+  <main class="container" id="main-content">
 
 
     <!-- Buscador y Filtros -->
     <div class="search-filter-box">
       <div class="search-row">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon" aria-hidden="true">⌕</span>
         <input type="text" class="search-input" id="search-input" aria-label="Buscar tarjetas"
-          placeholder="Buscar por rubro, servicio, nombre, oficio o perfil (ej: informatica, electricista, refrigeracion, fletes)...">
+          placeholder="Buscar por rubro, servicio, nombre u oficio…">
       </div>
       <div class="filters-row" role="group" aria-label="Filtrar por categoría">
         <span class="filter-label">Filtrar por:</span>
@@ -890,18 +977,23 @@
         <button class="btn-filter" data-category="cvs" aria-pressed="false">
           CVs Personales <span class="filter-count">1</span>
         </button>
-        <span class="result-count" id="result-count"></span>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
       </div>
     </div>
 
     <!-- Grid del Tablero -->
-    <div class="tablero-grid" id="tablero-grid">
+    <section class="cards-section" aria-labelledby="cards-title">
+      <div class="cards-heading">
+        <h2 id="cards-title">Todas las tarjetas</h2>
+        <p>Encontrá opciones locales y contactalas directamente.</p>
+      </div>
+      <div class="tablero-grid" id="tablero-grid">
       <div class="tarjeta-card" data-category="profesionales"
         data-keywords="estudio contable spinnato lucas cr. spinnato lucas, m.p 3279. direccion bernardo houssay 28, apostoles misiones. experto en constitucion de sociedades, experto universitario en mercados de capitales, realizamos altas de monotributo, responsables inscriptos, enfocados en estrategicas fiscales y patrimoniales. consultoria profesional para pymes. profesionales" data-slug="spinnato-lucas" id="t-spinnato-lucas">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/reunion_4_6a88d60045424.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/reunion_4_6a88d60045424.webp&quot;)" aria-label="Ampliar tarjeta de ESTUDIO CONTABLE SPINNATO LUCAS">
           <img class="tarjeta-img" src="assets/tarjetas/reunion_4_6a88d60045424.webp" width="960" height="1200" alt="ESTUDIO CONTABLE SPINNATO LUCAS — Profesionales en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
           <h3 class="tarjeta-title"><a class="tarjeta-title-link" href="https://apostoles.ar/t/spinnato-lucas.html">ESTUDIO CONTABLE SPINNATO LUCAS</a></h3>
@@ -910,17 +1002,19 @@
           <a class="btn-ficha" href="https://apostoles.ar/t/spinnato-lucas.html">Ver ficha completa →</a>
           <div class="tarjeta-socials">
                                                             <a href="assets/tarjetas/estoy-spinnato-lucas.png" target="_blank" rel="noopener" download title="Imagen para compartir" aria-label="Descargar imagen Estoy en Apostoles.ar de ESTUDIO CONTABLE SPINNATO LUCAS">🪧</a>          </div>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758483857?text=Hola%2C+vengo+desde+la+p%C3%A1gina+de+Apostoles.ar%2C+quisiera+hacer+una+consulta.">
-            📲 Apriete aquí para comunicarte con el Estudio Spinanto          </a>
-          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+ESTUDIO+CONTABLE+SPINNATO+LUCAS+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fspinnato-lucas.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de ESTUDIO CONTABLE SPINNATO LUCAS">🔗 Compartir</a>
+            WhatsApp: Apriete aquí para comunicarte con el Estudio Spinanto          </a>
+          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+ESTUDIO+CONTABLE+SPINNATO+LUCAS+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fspinnato-lucas.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de ESTUDIO CONTABLE SPINNATO LUCAS">Compartir tarjeta</a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="profesionales"
         data-keywords="f&amp;f automotores venta de autos usados seleccionados y 0km en apostoles y zona sur. ofrecemos financiacion a medida, facilidades de pago y tomamos tu usado con la mejor cotizacion. atencion personalizada para ayudarte a encontrar tu proximo vehiculo con total confianza. atendemos de lunes a sabados de 8:30 a 12:00 hs y de 16:00 a 20:00 hs. en sarmiento 98 y gral. paz profesionales" data-slug="utomotores" id="t-utomotores">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/ee_6ac661f7cb5b8.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/ee_6ac661f7cb5b8.webp&quot;)" aria-label="Ampliar tarjeta de F&amp;F Automotores">
           <img class="tarjeta-img" src="assets/tarjetas/ee_6ac661f7cb5b8.webp" width="1200" height="1196" alt="F&amp;F Automotores — Profesionales en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
           <h3 class="tarjeta-title"><a class="tarjeta-title-link" href="https://apostoles.ar/t/utomotores.html">F&amp;F Automotores</a></h3>
@@ -929,48 +1023,54 @@
           <a class="btn-ficha" href="https://apostoles.ar/t/utomotores.html">Ver ficha completa →</a>
           <div class="tarjeta-socials">
                                                             <a href="assets/tarjetas/estoy-utomotores.png" target="_blank" rel="noopener" download title="Imagen para compartir" aria-label="Descargar imagen Estoy en Apostoles.ar de F&amp;F Automotores">🪧</a>          </div>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758456336?text=Hola+F%26F+Automotores%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
-            📲 Sebastian Ostafchuk          </a>
-          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+F%26F+Automotores+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Futomotores.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de F&amp;F Automotores">🔗 Compartir</a>
+            WhatsApp: Sebastian Ostafchuk          </a>
+          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+F%26F+Automotores+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Futomotores.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de F&amp;F Automotores">Compartir tarjeta</a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="emprendimientos"
         data-keywords="fiambreria rodri avda. julian zubreski 241. venta de fiambres, bebidas frias, comestibles en general y mucho mas. los esperamos con la mejor atencion. emprendimientos">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/1001305272_6a88d3c0022c9.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/1001305272_6a88d3c0022c9.webp&quot;)" aria-label="Ampliar tarjeta de Fiambrería Rodri">
           <img class="tarjeta-img" src="assets/tarjetas/1001305272_6a88d3c0022c9.webp" width="834" height="1200" alt="Fiambrería Rodri — Emprendimientos en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Emprendimientos</span>
           <h3 class="tarjeta-title">Fiambrería Rodri</h3>
           <p class="tarjeta-desc">
             Avda. Julián Zubreski 241. Venta de Fiambres, Bebidas Frías, Comestibles en General y Mucho Más.
 Los esperamos con la mejor atención.          </p>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758499310?text=Hola%2C+vengo+de+la+p%C3%A1gina+Apostoles.ar">
-            📲 Aprieta aquí para Consultar          </a>
+            WhatsApp: Aprieta aquí para Consultar          </a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="emprendimientos"
         data-keywords="hamburguederia myd venta de comida rapida. y durante el medio dia venta de comida caseras por viandas. emprendimientos">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260806_wa0036_6a88aeab71f06.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260806_wa0036_6a88aeab71f06.webp&quot;)" aria-label="Ampliar tarjeta de Hamburguederia MyD">
           <img class="tarjeta-img" src="assets/tarjetas/img_20260806_wa0036_6a88aeab71f06.webp" width="1200" height="1200" alt="Hamburguederia MyD — Emprendimientos en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Emprendimientos</span>
           <h3 class="tarjeta-title">Hamburguederia MyD</h3>
           <p class="tarjeta-desc">
             Venta de comida rapida. Y durante el medio dia venta de comida caseras por viandas.          </p>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493764171802?text=Hola%2C+vi+tu+tarjeta+en+la+p%C3%A1gina+de+Apostoles.ar+y+quiero+hacer+un+pedido.">
-            📲 Enviar WhatsApp          </a>
+            Contactar por WhatsApp          </a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="profesionales"
         data-keywords="mecanica f&amp;f mantenimiento integral y reparacion de vehiculos en apostoles. realizamos diagnostico computarizado, mecanica general, frenos, tren delantero, cambio de aceite y filtro. trabajo garantizado y atencion personalizada para que viajes con total seguridad. atendemos de lunes a viernes de 8:00 a 12:00 hs y de 15:30 a 20:00 hs. !agenda tu turno o solicita presupuesto por whatsapp! profesionales" data-slug="ecanica" id="t-ecanica">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/taller_bien_6a9eb67254ae2.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/taller_bien_6a9eb67254ae2.webp&quot;)" aria-label="Ampliar tarjeta de Mecánica F&amp;F">
           <img class="tarjeta-img" src="assets/tarjetas/taller_bien_6a9eb67254ae2.webp" width="1195" height="896" alt="Mecánica F&amp;F — Profesionales en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
           <h3 class="tarjeta-title"><a class="tarjeta-title-link" href="https://apostoles.ar/t/ecanica.html">Mecánica F&amp;F</a></h3>
@@ -979,17 +1079,19 @@ Los esperamos con la mejor atención.          </p>
           <a class="btn-ficha" href="https://apostoles.ar/t/ecanica.html">Ver ficha completa →</a>
           <div class="tarjeta-socials">
                                                             <a href="assets/tarjetas/estoy-ecanica.png" target="_blank" rel="noopener" download title="Imagen para compartir" aria-label="Descargar imagen Estoy en Apostoles.ar de Mecánica F&amp;F">🪧</a>          </div>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758456336?text=Hola+Mec%C3%A1nica+F%26F%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
-            📲 Sebastian Ostafchuk          </a>
-          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Mec%C3%A1nica+F%26F+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fecanica.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Mecánica F&amp;F">🔗 Compartir</a>
+            WhatsApp: Sebastian Ostafchuk          </a>
+          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Mec%C3%A1nica+F%26F+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fecanica.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Mecánica F&amp;F">Compartir tarjeta</a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="profesionales"
         data-keywords="ruffians barbers cortes de cabellos masculinos, maximo detalle y dedicacion en cada trabajo. trabajamos solo por turnos en la barberia y cortes a domicilio!" data-slug="uffians-arbers" id="t-uffians-arbers">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_8599_6a9c4d51c84cd.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/img_8599_6a9c4d51c84cd.webp&quot;)" aria-label="Ampliar tarjeta de Ruffians Barbers">
           <img class="tarjeta-img" src="assets/tarjetas/img_8599_6a9c4d51c84cd.webp" width="944" height="1200" alt="Ruffians Barbers — Profesionales en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Profesionales / Servicios</span>
           <h3 class="tarjeta-title"><a class="tarjeta-title-link" href="https://apostoles.ar/t/uffians-arbers.html">Ruffians Barbers</a></h3>
@@ -999,17 +1101,19 @@ Trabajamos solo por turnos en la barbería y cortes a domicilio!          </p>
           <a class="btn-ficha" href="https://apostoles.ar/t/uffians-arbers.html">Ver ficha completa →</a>
           <div class="tarjeta-socials">
                         <a href="https://www.instagram.com/Ruffiansbarbers" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram de Ruffians Barbers">📸</a>                                    <a href="assets/tarjetas/estoy-uffians-arbers.png" target="_blank" rel="noopener" download title="Imagen para compartir" aria-label="Descargar imagen Estoy en Apostoles.ar de Ruffians Barbers">🪧</a>          </div>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758549084?text=Hola%2C+me+gustar%C3%ADa+reservar+un+turno+el+d%C3%ADa+____+a+las+____.">
-            📲 Agendar turno!          </a>
-          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Ruffians+Barbers+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fuffians-arbers.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Ruffians Barbers">🔗 Compartir</a>
+            WhatsApp: Agendar turno!          </a>
+          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Ruffians+Barbers+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fuffians-arbers.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Ruffians Barbers">Compartir tarjeta</a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="emprendimientos"
         data-keywords="salon mesa real salon de eventos mesa real, es un espacio para festejar el cual tiene mesa de pool, pelotero, metegol, cantina, luces ritmicas, maquina de humo, mesas, sillas, zona de cocina y mas. te esperamos para tu fiesta inolvidable, priorizando la diversion para chicos y grandes emprendimientos" data-slug="mesa-real" id="t-mesa-real">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp&quot;)" aria-label="Ampliar tarjeta de Salón Mesa Real">
           <img class="tarjeta-img" src="assets/tarjetas/whatsapp_image_2026_08_22_at_13_27_50_6a89d334e3d9d.webp" width="928" height="1152" alt="Salón Mesa Real — Emprendimientos en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Emprendimientos</span>
           <h3 class="tarjeta-title"><a class="tarjeta-title-link" href="https://apostoles.ar/t/mesa-real.html">Salón Mesa Real</a></h3>
@@ -1019,17 +1123,19 @@ Te esperamos para tu fiesta inolvidable, priorizando la diversión para Chicos y
           <a class="btn-ficha" href="https://apostoles.ar/t/mesa-real.html">Ver ficha completa →</a>
           <div class="tarjeta-socials">
                         <a href="https://www.instagram.com/salonmesareal?igsi=MWduZDJpeXh5anNoNQ==" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram de Salón Mesa Real">📸</a>                        <a href="https://maps.app.goo.gl/tGK7trzxT1DC5WNz9" target="_blank" rel="noopener" title="Ubicación" aria-label="Ubicación de Salón Mesa Real">📍</a>            <a href="assets/tarjetas/estoy-mesa-real.png" target="_blank" rel="noopener" download title="Imagen para compartir" aria-label="Descargar imagen Estoy en Apostoles.ar de Salón Mesa Real">🪧</a>          </div>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758545119?text=Hola%2C+vengo+de+la+cartelera+de+ap%C3%B3stoles">
-            📲 Consulta Aquí más sobre Salón Mesa Real          </a>
-          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Sal%C3%B3n+Mesa+Real+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fmesa-real.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Salón Mesa Real">🔗 Compartir</a>
+            WhatsApp: Consulta Aquí más sobre Salón Mesa Real          </a>
+          <a class="btn-wa-contact btn-share" href="https://wa.me/?text=Mir%C3%A1+la+tarjeta+de+Sal%C3%B3n+Mesa+Real+en+la+Cartelera+Digital+de+Ap%C3%B3stoles+%F0%9F%91%89+https%3A%2F%2Fapostoles.ar%2Ft%2Fmesa-real.html" target="_blank" rel="noopener" title="Compartir esta tarjeta" aria-label="Compartir la tarjeta de Salón Mesa Real">Compartir tarjeta</a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="oficios"
         data-keywords="ve deco &amp; eventos ? ? somos ve deco &amp; eventos ? decoraciones para eventos en general. alquiler de puffs y mobiliario. ? consultanos por tu fecha 3758552603 profesionales">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_9245_6a88ad6910a1e.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/img_9245_6a88ad6910a1e.webp&quot;)" aria-label="Ampliar tarjeta de Ve Deco &amp; Eventos 🎈">
           <img class="tarjeta-img" src="assets/tarjetas/img_9245_6a88ad6910a1e.webp" width="1200" height="800" alt="Ve Deco &amp; Eventos 🎈 — Oficios en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Oficios</span>
           <h3 class="tarjeta-title">Ve Deco &amp; Eventos 🎈</h3>
@@ -1041,38 +1147,44 @@ Alquiler de puffs y Mobiliario.
 
 📆 Consultanos por tu fecha
 3758552603          </p>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758552603?text=Hola+Ve+Deco+%26+Eventos+%F0%9F%8E%88%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
-            📲 Enviar WhatsApp          </a>
+            Contactar por WhatsApp          </a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="cvs"
         data-keywords="wolhein gabriel cv curriculum vitae desarrollador programador sistemas informatica automatizaciones software desarrollo tecnologia apostoles misiones">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/cv_wolhein_gabriel.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/cv_wolhein_gabriel.webp&quot;)" aria-label="Ampliar tarjeta de Wolhein Gabriel">
           <img class="tarjeta-img" src="assets/tarjetas/cv_wolhein_gabriel.webp" width="1024" height="1024" alt="Wolhein Gabriel — CVs Personales en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">CV / Postulante</span>
           <h3 class="tarjeta-title">Wolhein Gabriel</h3>
           <p class="tarjeta-desc">
             Desarrollador de Soluciones y automatizaciones con experiencia en análisis, diseño y puesta en marcha de sistemas informáticos y automatizaciones para empresas.          </p>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493743454291?text=Hola+Gabriel%21+Vi+tu+CV+en+ITe+Ap%C3%B3stoles+y+quer%C3%ADa+consultarte.">
-            📲 Enviar WhatsApp          </a>
+            Contactar por WhatsApp          </a>
+          </div>
         </div>
       </div>
       <div class="tarjeta-card" data-category="oficios"
         data-keywords="zapateria lo artesanal arreglos de calzados, talabarteria y tapiceria. profesionales">
-        <div class="tarjeta-img-container" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260819_wa0051_6a88822042bbf.webp&quot;)">
+        <button class="tarjeta-img-container" type="button" onclick="openLightbox(&quot;assets\/tarjetas\/img_20260819_wa0051_6a88822042bbf.webp&quot;)" aria-label="Ampliar tarjeta de Zapateria lo artesanal">
           <img class="tarjeta-img" src="assets/tarjetas/img_20260819_wa0051_6a88822042bbf.webp" width="1200" height="800" alt="Zapateria lo artesanal — Oficios en Apóstoles" loading="lazy">
-          <div class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</div>
-        </div>
+          <span class="tarjeta-zoom-overlay">🔍 Ampliar Tarjeta</span>
+        </button>
         <div class="tarjeta-info">
           <span class="tarjeta-cat-badge">Oficios</span>
           <h3 class="tarjeta-title">Zapateria lo artesanal</h3>
           <p class="tarjeta-desc">
             Arreglos de calzados, talabarteria y tapiceria.          </p>
+          <div class="tarjeta-actions">
           <a class="btn-wa-contact" href="https://wa.me/5493758459159?text=Hola+Zapateria+lo+artesanal%21+Vi+tu+tarjeta+en+la+cartelera+de+Ap%C3%B3stoles+y+quiero+contactarte.">
-            📲 Pity55          </a>
+            WhatsApp: Pity55          </a>
+          </div>
         </div>
       </div>
 
@@ -1084,7 +1196,8 @@ Alquiler de puffs y Mobiliario.
         <button class="btn-clear" id="btn-clear-filters" type="button">✕ Limpiar búsqueda y filtros</button>
       </div>
 
-    </div>
+      </div>
+    </section>
 
     <!-- Banner Sumar Tarjeta -->
     <div class="sumar-tarjeta-box">
@@ -1111,10 +1224,10 @@ Alquiler de puffs y Mobiliario.
   </div>
 
   <!-- ── Lightbox Modal ────────────────────────────────────── -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Imagen ampliada" onclick="closeLightbox(event)">
     <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightboxDirect()" aria-label="Cerrar imagen ampliada">✕</button>
-      <img src="" alt="Tarjeta Ampliada" class="lightbox-img" id="lightbox-img">
+      <button class="lightbox-close" id="lightbox-close" type="button" onclick="closeLightboxDirect()" aria-label="Cerrar imagen ampliada">✕</button>
+      <img alt="Tarjeta ampliada" class="lightbox-img" id="lightbox-img" hidden>
     </div>
   </div>
 
@@ -1122,7 +1235,7 @@ Alquiler de puffs y Mobiliario.
   <footer>
     <div class="container">
       <div class="footer-brand">
-        <img src="assets/marca/kit/09-navbar-compacto-blanco.svg" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-footer">
+        <img src="assets/marca/kit/09-navbar-compacto-blanco.svg" width="214" height="56" alt="Apóstoles — Cartelera de Apóstoles" class="brand-logo brand-logo-footer">
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
@@ -1147,8 +1260,26 @@ Alquiler de puffs y Mobiliario.
     const btnClearFilters = document.getElementById('btn-clear-filters');
     const featuredSection = document.getElementById('destacadas-section');
 
-    let currentCategory = 'todos';
-    let currentSearchTerm = '';
+    const params = new URLSearchParams(location.search);
+    const validCategories = new Set(Array.from(filterButtons).map(btn => btn.getAttribute('data-category')));
+    let currentCategory = validCategories.has(params.get('categoria')) ? params.get('categoria') : 'todos';
+    let currentSearchTerm = params.get('q') || '';
+
+    searchInput.value = currentSearchTerm;
+    filterButtons.forEach(btn => {
+      const active = btn.getAttribute('data-category') === currentCategory;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    function syncFilterUrl() {
+      const url = new URL(location.href);
+      if (currentCategory === 'todos') url.searchParams.delete('categoria');
+      else url.searchParams.set('categoria', currentCategory);
+      if (currentSearchTerm.trim() === '') url.searchParams.delete('q');
+      else url.searchParams.set('q', currentSearchTerm.trim());
+      history.replaceState(null, '', url);
+    }
 
     function normalizeText(text) {
       return text
@@ -1178,7 +1309,7 @@ Alquiler de puffs y Mobiliario.
           cardDesc.includes(normalizedSearch);
 
         if (matchesCategory && matchesSearch) {
-          card.style.display = 'flex';
+          card.style.display = '';
           visibleCount++;
         } else {
           card.style.display = 'none';
@@ -1202,11 +1333,13 @@ Alquiler de puffs y Mobiliario.
         btn.classList.toggle('active', btn.getAttribute('data-category') === 'todos');
         btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
       });
+      syncFilterUrl();
       filterCards();
     }
 
     searchInput.addEventListener('input', (e) => {
       currentSearchTerm = e.target.value;
+      syncFilterUrl();
       filterCards();
     });
 
@@ -1219,6 +1352,7 @@ Alquiler de puffs y Mobiliario.
         button.classList.add('active');
         button.setAttribute('aria-pressed', 'true');
         currentCategory = button.getAttribute('data-category');
+        syncFilterUrl();
         filterCards();
       });
     });
@@ -1229,12 +1363,11 @@ Alquiler de puffs y Mobiliario.
     filterCards();
 
     // ── Resaltar tarjeta propia (?t=slug) ─────────────────────
-    const params = new URLSearchParams(location.search);
     const slugPropio = (params.get('t') || '').trim().toLowerCase();
     if (slugPropio) {
       const card = document.querySelector('.tarjeta-card[data-slug="' + CSS.escape(slugPropio) + '"]');
       if (card) {
-        card.style.display = 'flex';
+        card.style.display = '';
         card.classList.add('tarjeta-propia');
         setTimeout(() => {
           card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1248,14 +1381,21 @@ Alquiler de puffs y Mobiliario.
 
     function openLightbox(imgSrc) {
       lightboxImg.src = imgSrc;
+      lightboxImg.hidden = false;
+      lightbox.setAttribute('aria-hidden', 'false');
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      document.getElementById('lightbox-close').focus();
     }
 
     function closeLightboxDirect() {
       lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      setTimeout(() => { lightboxImg.src = ''; }, 250);
+      setTimeout(() => {
+        lightboxImg.hidden = true;
+        lightboxImg.removeAttribute('src');
+      }, 250);
     }
 
     function closeLightbox(e) {
